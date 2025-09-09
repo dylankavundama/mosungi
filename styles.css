@@ -7,7 +7,7 @@
 
 :root {
     /* Colors */
-    --primary-blue: #1e3a8a;
+    --primary-blue: #049ED7;
     --secondary-blue: #3b82f6;
     --light-blue: #dbeafe;
     --accent-green: #10b981;
@@ -94,6 +94,7 @@ body {
     z-index: 1000;
     background: var(--white);
     box-shadow: var(--shadow-sm);
+    width: 100%;
 }
 
 .top-bar {
@@ -160,6 +161,30 @@ body {
     gap: var(--spacing-8);
 }
 
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: var(--spacing-8);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 .nav-link {
     text-decoration: none;
     color: var(--gray-700);
@@ -205,6 +230,13 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 }
 
 .hamburger span {
@@ -231,8 +263,23 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.hero-image-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Fallback si l'image ne charge pas */
+.hero-background:not(:has(.hero-image-bg)) {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231e3a8a" width="1200" height="800"/><circle fill="%233b82f6" cx="200" cy="200" r="100" opacity="0.3"/><circle fill="%2310b981" cx="1000" cy="600" r="150" opacity="0.2"/></svg>');
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23049ED7" width="1200" height="800"/><circle fill="%233b82f6" cx="200" cy="200" r="100" opacity="0.3"/><circle fill="%2310b981" cx="1000" cy="600" r="150" opacity="0.2"/></svg>');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -282,6 +329,19 @@ body {
 
 .about-image {
     position: relative;
+}
+
+.about-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Fallback si l'image ne charge pas */
+.about-image:not(:has(.about-img)) .image-placeholder {
+    display: flex;
 }
 
 .image-placeholder {
@@ -338,6 +398,23 @@ body {
     font-size: var(--font-size-5xl);
     color: var(--white);
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+.eye-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+}
+
+/* Fallback si l'image ne charge pas */
+.eye-image:not(:has(.eye-img)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-5xl);
+    color: var(--white);
 }
 
 .vision-text h3 {
@@ -540,6 +617,19 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-16);
     align-items: center;
+}
+
+.governance-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Fallback si l'image ne charge pas */
+.governance-image:not(:has(.governance-img)) .image-placeholder {
+    display: flex;
 }
 
 .governance-image .image-placeholder {
