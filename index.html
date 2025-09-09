@@ -1,748 +1,889 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Modèle HTML de Charité</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondation MOSUNGI</title>
+    <!-- Meta tags pour le référencement et le partage sur les réseaux sociaux -->
+    <meta name="description" content="Fondation MOSUNGI - Ensemble, protégeons les vies et la dignité. Organisation humanitaire congolaise luttant contre les violences et pour la paix.">
+    <meta name="keywords" content="MOSUNGI, fondation, RDC, Congo, humanitaire, violence, paix, droits de l'homme, soutien psychosocial">
+    <meta property="og:title" content="Fondation MOSUNGI - Protection des vies et de la dignité">
+    <meta property="og:description" content="Une organisation humanitaire congolaise qui s'engage à lutter contre les violences, à rétablir la paix et à soutenir les communautés.">
+    <meta property="og:image" content="https://placehold.co/1200x630/003366/FFFFFF?text=Fondation+MOSUNGI">
+    <meta property="og:url" content="URL_DE_VOTRE_SITE">
+    <meta name="twitter:card" content="summary_large_image">
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400%7CSource+Sans+Pro:700" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
-	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
-	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="css/style.css" />
+    <!-- Styles CSS -->
+    <style>
+        /* CSS Variables based on the Figma mockups palette */
+        :root {
+            --mosungi-dark-blue: #003366;
+            --mosungi-light-blue: #EAF3FF;
+            --mosungi-primary-green: #298218;
+            --mosungi-gold: #F5E800;
+            --mosungi-grey: #696A6B;
+            --mosungi-white: #FFFFFF;
+            --mosungi-off-white: #F8F9FA;
+            --mosungi-text-dark: #212121;
+        }
 
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--mosungi-text-dark);
+            background-color: var(--mosungi-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--mosungi-dark-blue);
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--mosungi-dark-blue);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--mosungi-dark-blue);
+            color: var(--mosungi-white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #002244;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--mosungi-primary-green);
+            color: var(--mosungi-white);
+            border: none;
+            margin-left: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1a620f;
+        }
+        
+        /* Header */
+        .main-header {
+            background-color: var(--mosungi-white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--mosungi-light-blue);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav-menu a {
+            color: var(--mosungi-text-dark);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .main-nav-menu a:hover {
+            color: var(--mosungi-dark-blue);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: var(--mosungi-dark-blue);
+        }
+        
+        /* Hero Section */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1200x450/003366/FFFFFF?text=Protection+des+vies') no-repeat center center/cover;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: var(--mosungi-white);
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 0;
+            color: var(--mosungi-white);
+        }
+        
+        /* About Us Section */
+        .about-us {
+            padding: 60px 0;
+            background-color: var(--mosungi-off-white);
+        }
+
+        .about-grid {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .about-image-collage {
+            flex: 1;
+        }
+
+        .about-image-collage img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .vision-text, .mission-text {
+            background-color: var(--mosungi-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .eyes-section {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .eyes-section img {
+            width: 48%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 60px 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--mosungi-dark-blue);
+            color: var(--mosungi-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card h3 {
+            color: var(--mosungi-white);
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.95em;
+            margin-bottom: 20px;
+        }
+
+        .service-card .read-more {
+            color: var(--mosungi-light-blue);
+            font-size: 2em;
+            font-weight: bold;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 60px 0;
+            background-color: var(--mosungi-off-white);
+        }
+
+        .values h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .value-item {
+            padding: 30px 20px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--mosungi-white);
+            border-radius: 8px;
+            font-size: 1.2em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Specific colors for values */
+        .value-item.respect { background-color: #D36C18; }
+        .value-item.integrite { background-color: #8327B6; }
+        .value-item.solidarite { background-color: #00735E; }
+        .value-item.responsabilite { background-color: #0068AA; }
+        .value-item.empathie { background-color: #370073; }
+        .value-item.collaboration { background-color: #920E00; }
+        .value-item.engagement { background-color: #44005D; }
+        .value-item.professionnalisme { background-color: #004D5D; }
+        
+        /* Governance Section */
+        .governance {
+            padding: 60px 0;
+            background-color: var(--mosungi-white);
+        }
+
+        .governance-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .governance-text {
+            flex: 2;
+        }
+
+        .governance-image {
+            flex: 1;
+        }
+
+        .governance-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Blog Section */
+        .blog {
+            padding: 60px 0;
+            background-color: var(--mosungi-off-white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-post {
+            background-color: var(--mosungi-white);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .blog-content p {
+            font-size: 0.9em;
+            color: var(--mosungi-grey);
+        }
+
+        /* Team Section */
+        .team {
+            padding: 60px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: var(--mosungi-off-white);
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid var(--mosungi-dark-blue);
+        }
+
+        .team-member h3 {
+            margin-bottom: 5px;
+        }
+
+        .team-member p.role {
+            font-style: italic;
+            color: var(--mosungi-grey);
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 60px 0;
+            background-color: var(--mosungi-off-white);
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p i {
+            margin-right: 10px;
+            color: var(--mosungi-dark-blue);
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: var(--mosungi-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--mosungi-light-blue);
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 1.1em;
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: var(--mosungi-dark-blue);
+            color: var(--mosungi-white);
+            padding: 40px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo .btn-whatsapp-footer {
+            background-color: var(--mosungi-primary-green);
+            color: var(--mosungi-white);
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-logo .btn-whatsapp-footer i {
+            margin-right: 8px;
+        }
+
+        .footer-nav h3,
+        .footer-info h3 {
+            color: var(--mosungi-white);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .footer-nav ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-nav ul li a {
+            color: var(--mosungi-light-blue);
+        }
+
+        .footer-nav ul li a:hover {
+            color: var(--mosungi-white);
+        }
+
+        .footer-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            color: var(--mosungi-light-blue);
+        }
+
+        .footer-info p i {
+            margin-right: 10px;
+            color: var(--mosungi-light-blue);
+            font-size: 1.1em;
+        }
+
+        .social-links a {
+            color: var(--mosungi-white);
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--mosungi-light-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+            }
+            .main-nav-menu {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                text-align: center;
+                background-color: var(--mosungi-off-white);
+                padding: 20px 0;
+            }
+            .main-nav-menu.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 25px;
+            }
+            .header-actions {
+                margin-top: 15px;
+            }
+            .about-grid, .governance-content, .contact-grid {
+                flex-direction: column;
+            }
+            .vision-mission, .eyes-section {
+                grid-template-columns: 1fr;
+            }
+            .eyes-section img {
+                width: 100%;
+            }
+            .values-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .footer-logo, .footer-nav, .footer-info {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .footer-logo img {
+                margin: 0 auto 15px auto;
+                display: block;
+            }
+            .footer-logo .btn-whatsapp-footer {
+                margin: 0 auto;
+            }
+            .footer-nav ul {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2em;
+            }
+            .services-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+            .main-nav-menu li {
+                margin: 0 5px 10px 5px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-	<header id="home">
-		<nav id="main-navbar">
-			<div class="container">
-				<div class="navbar-header">
-					<div class="navbar-brand">
-						<a class="logo" href="index.html"><img src="img/logo.png" alt="logo"></a>
-					</div>
-					<button class="navbar-toggle-btn">
-						<i class="fa fa-bars"></i>
-					</button>
-					<button class="search-toggle-btn">
-						<i class="fa fa-search"></i>
-					</button>
-				</div>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="https://placehold.co/150x50/003366/FFFFFF?text=LOGO" alt="Fondation MOSUNGI Logo">
+            </div>
+            <nav class="main-nav">
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="main-nav-menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#decouvrir">Découvrir</a></li>
+                    <li><a href="#gouvernance">Gouvernance</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#equipe">Notre Équipe</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-primary">Contactez Nous</a>
+                <a href="https://wa.me/votre_numero" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact sur WhatsApp</a>
+            </div>
+        </div>
+    </header>
 
-				<div class="navbar-search">
-					<button class="search-btn"><i class="fa fa-search"></i></button>
-					<div class="search-form">
-						<form>
-							<input class="input" type="text" name="search" placeholder="Rechercher">
-						</form>
-					</div>
-				</div>
-				<ul class="navbar-menu nav navbar-nav navbar-right">
-					<li><a href="index.html">Accueil</a></li>
-					<li><a href="#">À Propos</a></li>
-					<li class="has-dropdown"><a href="#">Causes</a>
-						<ul class="dropdown">
-							<li><a href="single-cause.html">Cause unique</a></li>
-						</ul>
-					</li>
-					<li class="has-dropdown"><a href="#">Événements</a>
-						<ul class="dropdown">
-							<li><a href="single-event.html">Événement unique</a></li>
-						</ul>
-					</li>
-					<li class="has-dropdown"><a href="#">Blog</a>
-						<ul class="dropdown">
-							<li><a href="blog.html">Page de blog</a></li>
-							<li><a href="single-blog.html">Blog unique</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
-		</nav>
-		<div id="home-owl" class="owl-carousel owl-theme">
-			<div class="home-item">
-				<div class="section-bg" style="background-image: url(./img/background-1.jpg);"></div>
-				<div class="home">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="home-content">
-									<h1>Sauvons les enfants</h1>
-									<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-										eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<a href="#" class="primary-button">Voir les causes</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="home-item">
-				<div class="section-bg" style="background-image: url(./img/background-2.jpg);"></div>
-				<div class="home">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-8">
-								<div class="home-content">
-									<h1>Devenez un bénévole</h1>
-									<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-										eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<a href="#" class="primary-button">Rejoignez-nous maintenant !</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+    <section class="hero-banner" id="accueil">
+        <div class="container hero-content">
+            <h1>Ensemble, protégeons les vies et la dignité</h1>
+        </div>
+    </section>
 
+    <section class="about-us" id="decouvrir">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-collage">
+                    <img src="https://placehold.co/600x400/298218/FFFFFF?text=Image+de+groupe" alt="Group of smiling people">
+                </div>
+                <div class="about-text">
+                    <h2>À PROPOS DE NOUS</h2>
+                    <p>MOSUNGI est une organisation CONGOLAISE créée et pilotée par des avocats,médecins,sociologues, psychologues et juristes pour les femmes et filles, hommes et garçons. Il s'agit d'une équipe pluridisciplinaire. L'organisation humanitaire est composée d'une équipe d'experts et de professionnels.</p>
+                    <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en général, mettre fin aux guerres, conflits et rétablir la paix dans nos communautés. Nous aspirons à un avenir où les droits de chaque personne sont respectés.</p>
+                    <p>Nous croyons que cela est possible grâce à une action collective. Nous nous engageons à travailler sans relâche pour atteindre nos objectifs. Nos services sont une réponse efficace, coordonnée et adaptée aux besoins des communautés touchées par les conflits.</p>
+                </div>
+            </div>
+            <div class="vision-mission">
+                <div class="vision-text">
+                    <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en général, mettre fin aux guerres, conflits et rétablir la paix dans nos communautés. Nous aspirons à un avenir où les droits de chaque personne sont respectés.</p>
+                </div>
+                <div class="mission-text">
+                    <p>La mission de notre organisation humanitaire est de fournir une aide et un soutien adaptés à leurs besoins. Nous travaillons à mobiliser des ressources et à sensibiliser le public aux défis auxquels nos communautés sont confrontées.</p>
+                </div>
+            </div>
+             <div class="eyes-section">
+                <img src="https://placehold.co/400x250/003366/FFFFFF?text=Gros+plan+oeil+1" alt="Close up of an eye">
+                <img src="https://placehold.co/400x250/003366/FFFFFF?text=Gros+plan+oeil+2" alt="Close up of an eye">
+            </div>
+        </div>
+    </section>
 
-	<div id="about" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-5">
-					<div class="section-title">
-						<h2 class="title">Bienvenue à la Charité</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-					<div class="about-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-							laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<a href="#" class="primary-button">Lire la suite</a>
-					</div>
-				</div>
-				<div class="col-md-offset-1 col-md-6">
-					<a href="#" class="about-video">
-						<i class="play-icon fa fa-play"></i>
-						<img src="./img/about.jpg" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="numbers" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-sm-6">
-					<div class="number">
-						<i class="fa fa-smile-o"></i>
-						<h3>47k</h3>
-						<span>Donateurs</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="number">
-						<i class="fa fa-heartbeat"></i>
-						<h3>154K</h3>
-						<span>Enfants sauvés</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="number">
-						<i class="fa fa-money"></i>
-						<h3>785K</h3>
-						<span>Donnés</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6">
-					<div class="number">
-						<i class="fa fa-handshake-o"></i>
-						<h3>357</h3>
-						<span>Bénévoles</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="causes" class="section">
-		<div class="container">
-			<div class="row">
+    <section class="services">
+        <div class="container">
+            <h2>NOS SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Formation Aux Premiers Secours</h3>
+                    <p>Selon une étude menée par l'Organisation Mondiale de la Santé, seulement 10% de la population mondiale à accès à des services de premiers secours de base.</p>
+                    <a href="#" class="read-more">→</a>
+                </div>
+                <div class="service-card">
+                    <h3>Assistance & Soutiens Psychosocial</h3>
+                    <p>Selon les Nations Unies, les conflits armés en Afrique ont été marqués par une utilisation généralisée de violences sexuelles comme tactique de guerre.</p>
+                    <a href="#" class="read-more">→</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="col-md-8 col-md-offset-2">
-					<div class="section-title text-center">
-						<h2 class="title">Nos causes</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="causes">
-						<div class="causes-img">
-							<a href="single-cause.html">
-								<img src="./img/post-1.jpg" alt="">
-							</a>
-						</div>
-						<div class="causes-progress">
-							<div class="causes-progress-bar">
-								<div style="width: 87%;">
-									<span>87%</span>
-								</div>
-							</div>
-							<div>
-								<span class="causes-raised">Récolté : <strong>52.000$</strong></span>
-								<span class="causes-goal">Objectif : <strong>90.000$</strong></span>
-							</div>
-						</div>
-						<div class="causes-content">
-							<h3><a href="single-cause.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-							<a href="single-cause.html" class="primary-button causes-donate">Faire un don maintenant</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="causes">
-						<div class="causes-img">
-							<a href="single-cause.html">
-								<img src="./img/post-2.jpg" alt="">
-							</a>
-						</div>
-						<div class="causes-progress">
-							<div class="causes-progress-bar">
-								<div style="width: 53%;">
-									<span>53%</span>
-								</div>
-							</div>
-							<div>
-								<span class="causes-raised">Récolté : <strong>52.000$</strong></span>
-								<span class="causes-goal">Objectif : <strong>90.000$</strong></span>
-							</div>
-						</div>
-						<div class="causes-content">
-							<h3><a href="single-cause.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-							<a href="single-cause.html" class="primary-button causes-donate">Faire un don maintenant</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="causes">
-						<div class="causes-img">
-							<a href="single-cause.html">
-								<img src="./img/post-3.jpg" alt="">
-							</a>
-						</div>
-						<div class="causes-progress">
-							<div class="causes-progress-bar">
-								<div style="width: 72%;">
-									<span>72%</span>
-								</div>
-							</div>
-							<div>
-								<span class="causes-raised">Récolté : <strong>52.000$</strong></span>
-								<span class="causes-goal">Objectif : <strong>90.000$</strong></span>
-							</div>
-						</div>
-						<div class="causes-content">
-							<h3><a href="single-cause.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-							<a href="single-cause.html" class="primary-button causes-donate">Faire un don maintenant</a>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix visible-md visible-lg"></div>
+    <section class="values">
+        <div class="container">
+            <h2>NOS VALEURS</h2>
+            <div class="values-grid">
+                <div class="value-item respect">Respect</div>
+                <div class="value-item integrite">Intégrité</div>
+                <div class="value-item solidarite">Solidarité</div>
+                <div class="value-item responsabilite">Responsabilité</div>
+                <div class="value-item empathie">Empathie</div>
+                <div class="value-item collaboration">Collaboration</div>
+                <div class="value-item engagement">Engagement</div>
+                <div class="value-item professionnalisme">Professionnalisme</div>
+            </div>
+        </div>
+    </section>
 
-				<div class="col-md-4">
-					<div class="causes">
-						<div class="causes-img">
-							<a href="single-cause.html">
-								<img src="./img/post-4.jpg" alt="">
-							</a>
-						</div>
-						<div class="causes-progress">
-							<div class="causes-progress-bar">
-								<div style="width: 64%;">
-									<span>64%</span>
-								</div>
-							</div>
-							<div>
-								<span class="causes-raised">Récolté : <strong>52.000$</strong></span>
-								<span class="causes-goal">Objectif : <strong>90.000$</strong></span>
-							</div>
-						</div>
-						<div class="causes-content">
-							<h3><a href="single-cause.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-							<a href="single-cause.html" class="primary-button causes-donate">Faire un don maintenant</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="causes">
-						<div class="causes-img">
-							<a href="single-cause.html">
-								<img src="./img/post-5.jpg" alt="">
-							</a>
-						</div>
-						<div class="causes-progress">
-							<div class="causes-progress-bar">
-								<div style="width: 72%;">
-									<span>72%</span>
-								</div>
-							</div>
-							<div>
-								<span class="causes-raised">Récolté : <strong>52.000$</strong></span>
-								<span class="causes-goal">Objectif : <strong>90.000$</strong></span>
-							</div>
-						</div>
-						<div class="causes-content">
-							<h3><a href="single-cause.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-							<a href="single-cause.html" class="primary-button causes-donate">Faire un don maintenant</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="causes">
-						<div class="causes-img">
-							<a href="single-cause.html">
-								<img src="./img/post-6.jpg" alt="">
-							</a>
-						</div>
-						<div class="causes-progress">
-							<div class="causes-progress-bar">
-								<div style="width: 53%;">
-									<span>53%</span>
-								</div>
-							</div>
-							<div>
-								<span class="causes-raised">Récolté : <strong>52.000$</strong></span>
-								<span class="causes-goal">Objectif : <strong>90.000$</strong></span>
-							</div>
-						</div>
-						<div class="causes-content">
-							<h3><a href="single-cause.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-							<a href="single-cause.html" class="primary-button causes-donate">Faire un don maintenant</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="cta" class="section">
-		<div class="section-bg" style="background-image: url(./img/background-1.jpg);"
-			data-stellar-background-ratio="0.5"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-offset-2 col-md-8">
-					<div class="cta-content text-center">
-						<h1>Devenez un bénévole</h1>
-						<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua.</p>
-						<a href="#" class="primary-button">Rejoignez-nous maintenant !</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="events" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="section-title text-center">
-						<h2 class="title">Événements à venir</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-1.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 octobre, 2018 | 8:00 AM - 11:00 PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-2.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a>
-							</h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 octobre, 2018 | 8:00 AM - 11:00 PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix visible-md visible-lg"></div>
+    <section class="governance" id="gouvernance">
+        <div class="container governance-content">
+            <div class="governance-text">
+                <h2>La gouvernance de la Fondation MOSUNGI est basée sur des principes de crédibilité, de transparence, de responsabilité et de participation. Elle est dirigée par un conseil d'administration composé de membres expérimentés et engagés. Ils supervisent les activités de l'organisation et prennent des décisions stratégiques.</h2>
+                <p>L'équipe de direction est responsable de la mise en œuvre des décisions du conseil d'administration et de la gestion quotidienne de l'organisation. Nous travaillons en étroite collaboration avec les communautés touchées par les conflits et nous assurons une utilisation efficace et transparente des ressources.</p>
+            </div>
+            <div class="governance-image">
+                <img src="https://placehold.co/600x400/F5E800/FFFFFF?text=Gouvernance" alt="People in a meeting, symbolizing governance">
+            </div>
+        </div>
+    </section>
 
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-3.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Possit nostro aeterno eu vis, ut cum quem reque</a></h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 octobre, 2018 | 8:00 AM - 11:00 PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="event">
-						<div class="event-img">
-							<a href="single-event.html">
-								<img src="./img/event-4.jpg" alt="">
-							</a>
-						</div>
-						<div class="event-content">
-							<h3><a href="single-event.html">Vix fuisset tibique facilisis cu. Justo accusata ius at</a>
-							</h3>
-							<ul class="event-meta">
-								<li><i class="fa fa-clock-o"></i> 24 octobre, 2018 | 8:00 AM - 11:00 PM</li>
-								<li><i class="fa fa-map-marker"></i> 2736 Hinkle Deegan Lake Road</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="testimonial" class="section">
-		<div class="section-bg" style="background-image: url(./img/background-2.jpg);"
-			data-stellar-background-ratio="0.5"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div id="testimonial-owl" class="owl-carousel owl-theme">
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-1.jpg" alt="">
-								</div>
-								<h3>Jean Dupont</h3>
-								<span>Bénévole</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-2.jpg" alt="">
-								</div>
-								<h3>Jean Dupont</h3>
-								<span>Bénévole</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-1.jpg" alt="">
-								</div>
-								<h3>Jean Dupont</h3>
-								<span>Bénévole</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<div class="testimonial-img">
-									<img src="./img/avatar-2.jpg" alt="">
-								</div>
-								<h3>Jean Dupont</h3>
-								<span>Bénévole</span>
-							</div>
-							<div class="testimonial-quote">
-								<blockquote>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-										incididunt ut labore et dolore magna aliqua.</p>
-								</blockquote>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="blog" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="section-title text-center">
-						<h2 class="title">Notre blog</h2>
-						<p class="sub-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua.</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-1.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Possit nostro aeterno eu vis, ut cum
-									quem reque</a></h3>
-							<ul class="article-meta">
-								<li>12 novembre 2018</li>
-								<li>Par Jean Dupont</li>
-								<li>0 commentaires</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-2.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Vix fuisset tibique facilisis cu. Justo
-									accusata ius at</a></h3>
-							<ul class="article-meta">
-								<li>12 novembre 2018</li>
-								<li>Par Jean Dupont</li>
-								<li>0 commentaires</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-3.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Possit nostro aeterno eu vis, ut cum
-									quem reque</a></h3>
-							<ul class="article-meta">
-								<li>12 novembre 2018</li>
-								<li>Par Jean Dupont</li>
-								<li>0 commentaires</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- equipe -->
-	<div id="blog" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<div class="section-title text-center">
-						<h2 class="title">Team</h2>
-					</div>
-				</div>
-			</div>
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>Derniers Articles</h2>
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <img src="https://placehold.co/600x400/003366/FFFFFF?text=Article+1" alt="Article Image 1">
+                    <div class="blog-content">
+                        <h3>L'impact de la Fondation MOSUNGI sur la paix</h3>
+                        <p>Découvrez comment nos actions contribuent à bâtir un avenir plus sûr et plus pacifique pour tous.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <img src="https://placehold.co/600x400/298218/FFFFFF?text=Article+2" alt="Article Image 2">
+                    <div class="blog-content">
+                        <h3>Assistance psychosociale : un pilier essentiel</h3>
+                        <p>Plongez dans l'importance du soutien psychologique pour les victimes de conflits et de violences.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <img src="https://placehold.co/600x400/D36C18/FFFFFF?text=Article+3" alt="Article Image 3">
+                    <div class="blog-content">
+                        <h3>Témoignages : Une vie transformée</h3>
+                        <p>Lisez les histoires de ceux qui ont bénéficié de nos services et retrouvé espoir et dignité.</p>
+                        <a href="#">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<div class="owl-carousel owl-theme">
-				<div class="item">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-1.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Possit nostro aeterno eu vis, ut cum
-									quem reque</a></h3>
-							<ul class="article-meta">
-								<li>12 novembre 2018</li>
-								<li>Par Jean Dupont</li>
-								<li>0 commentaires</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
+    <!-- Team Section -->
+    <section class="team" id="equipe">
+        <div class="container">
+            <h2>Notre Équipe</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/003366/FFFFFF?text=Membre+1" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p class="role">Directeur Exécutif</p>
+                    <p>Expert en gouvernance et en gestion de projets humanitaires, il est le pilier de notre organisation.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/298218/FFFFFF?text=Membre+2" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p class="role">Responsable des Opérations</p>
+                    <p>Avec une solide expérience sur le terrain, elle s'assure que nos projets sont mis en œuvre efficacement.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/D36C18/FFFFFF?text=Membre+3" alt="Team Member 3">
+                    <h3 class="name">Paul Leblanc</h3>
+                    <p class="role">Coordinateur du Soutien Psychosocial</p>
+                    <p>Psychologue clinicien, il dirige notre équipe de soutien pour aider les personnes traumatisées.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://placehold.co/150x150/8327B6/FFFFFF?text=Membre+4" alt="Team Member 4">
+                    <h3 class="name">Marie Dubois</h3>
+                    <p class="role">Juriste en Droit Humanitaire</p>
+                    <p>Elle s'assure que toutes nos actions respectent les lois internationales et les droits de l'homme.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="item">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-2.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Vix fuisset tibique facilisis cu. Justo
-									accusata ius at</a></h3>
-							<ul class="article-meta">
-								<li>12 novembre 2018</li>
-								<li>Par Jean Dupont</li>
-								<li>0 commentaires</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
+    <section class="contact" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>Entre en contact avec Nous</h2>
+                <p>Très loin, au cœur des communautés blessées par les conflits, là où la dignité est menacée, la Fondation Mosungi s'élève pour protéger, soigner et redonner espoir.</p>
+                <p><i class="fas fa-envelope"></i> contact@mosungi.org</p>
+                <p><i class="fas fa-phone"></i> +243998777770</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Nom" required>
+                    <input type="tel" placeholder="Téléphone">
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Objet">
+                    <textarea placeholder="Message"></textarea>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-				<div class="item">
-					<div class="article">
-						<div class="article-img">
-							<a href="single-blog.html">
-								<img src="./img/post-3.jpg" alt="">
-							</a>
-						</div>
-						<div class="article-content">
-							<h3 class="article-title"><a href="single-blog.html">Possit nostro aeterno eu vis, ut cum
-									quem reque</a></h3>
-							<ul class="article-meta">
-								<li>12 novembre 2018</li>
-								<li>Par Jean Dupont</li>
-								<li>0 commentaires</li>
-							</ul>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua.</p>
-						</div>
-					</div>
-				</div>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="https://placehold.co/150x50/FFFFFF/003366?text=LOGO" alt="Fondation MOSUNGI Logo">
+                <a href="https://wa.me/votre_numero" target="_blank" class="btn btn-whatsapp-footer"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
+            </div>
+            <div class="footer-nav">
+                <h3>Mosungi</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#decouvrir">Découvrir</a></li>
+                    <li><a href="#gouvernance">Gouvernance</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#equipe">Notre Équipe</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h3>Infos Officielles</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Avenue de la justice... #4, Commune de la Gombe/Kinshasa/RDC</p>
+                <p><i class="fas fa-envelope"></i> contact@mosungi.org</p>
+                <p><i class="fas fa-phone"></i> +243998777770</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-			</div>
-		</div>
-	</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
 
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$(".owl-carousel").owlCarousel({
-				loop: true,
-				margin: 10,
-				nav: true,
-				responsive: {
-					0: {
-						items: 1
-					},
-					600: {
-						items: 2
-					},
-					1000: {
-						items: 3
-					}
-				}
-			});
-		});
-	</script>
-	<footer id="footer" class="section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 col-sm-6">
-					<div class="footer-widget">
-						<h2 class="footer-title">À propos de nous</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua.</p>
-						<ul class="footer-contact">
-							<li><i class="fa fa-map-marker"></i> 2736 Gombe, Kinshasa</li>
-							<li><i class="fa fa-phone"></i> 0998765789</li>
-							<li><i class="fa fa-envelope"></i> &nbsp;<a href="#">charity@email.com</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6">
-					<div class="footer-widget">
-						<h2 class="footer-title">Newsletter</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-							labore et dolore magna aliqua.</p>
-						<form class="footer-newsletter">
-							<input class="input" type="email" placeholder="Entrez votre email">
-							<button class="primary-button">S'abonner</button>
-						</form>
-						<ul class="footer-social">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="footer-copyright">
-				<div class="row">
-					<div class="col-md-6">
-						<p>Copyright &copy; 2025. Tous droits réservés.</p>
-					</div>
-					<div class="col-md-6">
-						<ul class="footer-menu">
-							<li><a href="#">Conditions générales</a></li>
-							<li><a href="#">Politique de confidentialité</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/main.js"></script>
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.querySelector('.main-nav-menu');
+
+            mobileMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Fermer le menu après un clic sur un lien
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            const contactForm = document.querySelector('.contact-form form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // NOTE: This alert() is for demonstration only as canvas cannot show alerts.
+                    // For a real app, use a modal or a message on the page.
+                    alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+                    this.reset();
+                });
+            }
+
+            const header = document.querySelector('.main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
