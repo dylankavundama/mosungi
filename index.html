@@ -3,887 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fondation MOSUNGI</title>
-    <!-- Meta tags pour le référencement et le partage sur les réseaux sociaux -->
-    <meta name="description" content="Fondation MOSUNGI - Ensemble, protégeons les vies et la dignité. Organisation humanitaire congolaise luttant contre les violences et pour la paix.">
-    <meta name="keywords" content="MOSUNGI, fondation, RDC, Congo, humanitaire, violence, paix, droits de l'homme, soutien psychosocial">
-    <meta property="og:title" content="Fondation MOSUNGI - Protection des vies et de la dignité">
-    <meta property="og:description" content="Une organisation humanitaire congolaise qui s'engage à lutter contre les violences, à rétablir la paix et à soutenir les communautés.">
-    <meta property="og:image" content="https://placehold.co/1200x630/003366/FFFFFF?text=Fondation+MOSUNGI">
-    <meta property="og:url" content="URL_DE_VOTRE_SITE">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Styles CSS -->
-    <style>
-        /* CSS Variables based on the Figma mockups palette */
-        :root {
-            --mosungi-dark-blue: #003366;
-            --mosungi-light-blue: #EAF3FF;
-            --mosungi-primary-green: #298218;
-            --mosungi-gold: #F5E800;
-            --mosungi-grey: #696A6B;
-            --mosungi-white: #FFFFFF;
-            --mosungi-off-white: #F8F9FA;
-            --mosungi-text-dark: #212121;
-        }
-
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: var(--mosungi-text-dark);
-            background-color: var(--mosungi-white);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3 {
-            color: var(--mosungi-dark-blue);
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--mosungi-dark-blue);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: var(--mosungi-dark-blue);
-            color: var(--mosungi-white);
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #002244;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--mosungi-primary-green);
-            color: var(--mosungi-white);
-            border: none;
-            margin-left: 10px;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1a620f;
-        }
-        
-        /* Header */
-        .main-header {
-            background-color: var(--mosungi-white);
-            padding: 15px 0;
-            border-bottom: 1px solid var(--mosungi-light-blue);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-        }
-        
-        .main-nav-menu {
-            display: flex;
-            gap: 25px;
-        }
-
-        .main-nav-menu a {
-            color: var(--mosungi-text-dark);
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .main-nav-menu a:hover {
-            color: var(--mosungi-dark-blue);
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5em;
-            color: var(--mosungi-dark-blue);
-        }
-        
-        /* Hero Section */
-        .hero-banner {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1200x450/003366/FFFFFF?text=Protection+des+vies') no-repeat center center/cover;
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            color: var(--mosungi-white);
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3em;
-            margin-bottom: 0;
-            color: var(--mosungi-white);
-        }
-        
-        /* About Us Section */
-        .about-us {
-            padding: 60px 0;
-            background-color: var(--mosungi-off-white);
-        }
-
-        .about-grid {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
-            align-items: center;
-        }
-
-        .about-image-collage {
-            flex: 1;
-        }
-
-        .about-image-collage img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .about-text {
-            flex: 2;
-        }
-
-        .vision-mission {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .vision-text, .mission-text {
-            background-color: var(--mosungi-white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .eyes-section {
-            display: flex;
-            justify-content: space-around;
-            gap: 30px;
-        }
-
-        .eyes-section img {
-            width: 48%;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        /* Services Section */
-        .services {
-            padding: 60px 0;
-        }
-
-        .services h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: var(--mosungi-dark-blue);
-            color: var(--mosungi-white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            position: relative;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .service-card h3 {
-            color: var(--mosungi-white);
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.95em;
-            margin-bottom: 20px;
-        }
-
-        .service-card .read-more {
-            color: var(--mosungi-light-blue);
-            font-size: 2em;
-            font-weight: bold;
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-        }
-        
-        /* Values Section */
-        .values {
-            padding: 60px 0;
-            background-color: var(--mosungi-off-white);
-        }
-
-        .values h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .value-item {
-            padding: 30px 20px;
-            text-align: center;
-            font-weight: bold;
-            color: var(--mosungi-white);
-            border-radius: 8px;
-            font-size: 1.2em;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* Specific colors for values */
-        .value-item.respect { background-color: #D36C18; }
-        .value-item.integrite { background-color: #8327B6; }
-        .value-item.solidarite { background-color: #00735E; }
-        .value-item.responsabilite { background-color: #0068AA; }
-        .value-item.empathie { background-color: #370073; }
-        .value-item.collaboration { background-color: #920E00; }
-        .value-item.engagement { background-color: #44005D; }
-        .value-item.professionnalisme { background-color: #004D5D; }
-        
-        /* Governance Section */
-        .governance {
-            padding: 60px 0;
-            background-color: var(--mosungi-white);
-        }
-
-        .governance-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .governance-text {
-            flex: 2;
-        }
-
-        .governance-image {
-            flex: 1;
-        }
-
-        .governance-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        /* Blog Section */
-        .blog {
-            padding: 60px 0;
-            background-color: var(--mosungi-off-white);
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .blog-post {
-            background-color: var(--mosungi-white);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .blog-post:hover {
-            transform: translateY(-5px);
-        }
-
-        .blog-post img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-content {
-            padding: 20px;
-        }
-
-        .blog-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .blog-content p {
-            font-size: 0.9em;
-            color: var(--mosungi-grey);
-        }
-
-        /* Team Section */
-        .team {
-            padding: 60px 0;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .team-member {
-            background-color: var(--mosungi-off-white);
-            text-align: center;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid var(--mosungi-dark-blue);
-        }
-
-        .team-member h3 {
-            margin-bottom: 5px;
-        }
-
-        .team-member p.role {
-            font-style: italic;
-            color: var(--mosungi-grey);
-            margin-bottom: 15px;
-        }
-        
-        /* Contact Section */
-        .contact {
-            padding: 60px 0;
-            background-color: var(--mosungi-off-white);
-        }
-
-        .contact-grid {
-            display: flex;
-            gap: 40px;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info p {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .contact-info p i {
-            margin-right: 10px;
-            color: var(--mosungi-dark-blue);
-        }
-
-        .contact-form {
-            flex: 1;
-            background-color: var(--mosungi-white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid var(--mosungi-light-blue);
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .contact-form textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            width: 100%;
-            border-radius: 5px;
-            padding: 12px;
-            font-size: 1.1em;
-        }
-        
-        /* Footer */
-        .main-footer {
-            background-color: var(--mosungi-dark-blue);
-            color: var(--mosungi-white);
-            padding: 40px 0;
-            font-size: 0.9em;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .footer-logo img {
-            height: 60px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo .btn-whatsapp-footer {
-            background-color: var(--mosungi-primary-green);
-            color: var(--mosungi-white);
-            padding: 8px 15px;
-            border-radius: 5px;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .footer-logo .btn-whatsapp-footer i {
-            margin-right: 8px;
-        }
-
-        .footer-nav h3,
-        .footer-info h3 {
-            color: var(--mosungi-white);
-            margin-bottom: 15px;
-            font-size: 1.1em;
-        }
-
-        .footer-nav ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-nav ul li a {
-            color: var(--mosungi-light-blue);
-        }
-
-        .footer-nav ul li a:hover {
-            color: var(--mosungi-white);
-        }
-
-        .footer-info p {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 10px;
-            color: var(--mosungi-light-blue);
-        }
-
-        .footer-info p i {
-            margin-right: 10px;
-            color: var(--mosungi-light-blue);
-            font-size: 1.1em;
-        }
-
-        .social-links a {
-            color: var(--mosungi-white);
-            font-size: 1.5em;
-            margin-right: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--mosungi-light-blue);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .header-content {
-                flex-direction: column;
-            }
-            .main-nav-menu {
-                flex-direction: column;
-                display: none;
-                width: 100%;
-                text-align: center;
-                background-color: var(--mosungi-off-white);
-                padding: 20px 0;
-            }
-            .main-nav-menu.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 25px;
-            }
-            .header-actions {
-                margin-top: 15px;
-            }
-            .about-grid, .governance-content, .contact-grid {
-                flex-direction: column;
-            }
-            .vision-mission, .eyes-section {
-                grid-template-columns: 1fr;
-            }
-            .eyes-section img {
-                width: 100%;
-            }
-            .values-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            .footer-logo, .footer-nav, .footer-info {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            .footer-logo img {
-                margin: 0 auto 15px auto;
-                display: block;
-            }
-            .footer-logo .btn-whatsapp-footer {
-                margin: 0 auto;
-            }
-            .footer-nav ul {
-                padding-left: 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-content h1 {
-                font-size: 2em;
-            }
-            .services-grid, .values-grid {
-                grid-template-columns: 1fr;
-            }
-            .btn {
-                padding: 8px 15px;
-                font-size: 0.9em;
-            }
-            .main-nav-menu li {
-                margin: 0 5px 10px 5px;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Fondation Mosungi - Protection des communautés affectées par les conflits</title>
+    <meta name="description" content="La Fondation Mosungi s'engage à protéger, soigner et redonner espoir aux communautés blessées par les conflits, avec un focus sur la lutte contre les violences sexuelles.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <img src="https://placehold.co/150x50/003366/FFFFFF?text=LOGO" alt="Fondation MOSUNGI Logo">
-            </div>
-            <nav class="main-nav">
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-map-marker-alt"></i> Avenue de la justice, 54, Résidence Victor. Kinshasa/Gombe</span>
+                    <span><i class="fas fa-envelope"></i> contact@mosungi.org</span>
+                    <span><i class="fab fa-whatsapp"></i> Connect on WhatsApp</span>
                 </div>
-                <ul class="main-nav-menu">
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#decouvrir">Découvrir</a></li>
-                    <li><a href="#gouvernance">Gouvernance</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#equipe">Notre Équipe</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <a href="#contact" class="btn btn-primary">Contactez Nous</a>
-                <a href="https://wa.me/votre_numero" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Contact sur WhatsApp</a>
             </div>
         </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <div class="logo-icon">+</div>
+                        <span>Fondation Mosungi</span>
+                    </div>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="#accueil" class="nav-link active">ACCUEIL</a>
+                    <a href="#apropos" class="nav-link">DÉCOUVRIR</a>
+                    <a href="#gouvernance" class="nav-link">GOUVERNANCE</a>
+                </div>
+                
+                <button class="cta-button">Contactez Nous</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="hero-banner" id="accueil">
-        <div class="container hero-content">
-            <h1>Ensemble, protégeons les vies et la dignité</h1>
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay">
+                <h1>Ensemble, protégeons les vies et la dignité</h1>
+            </div>
         </div>
     </section>
 
-    <section class="about-us" id="decouvrir">
+    <!-- About Section -->
+    <section id="apropos" class="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image-collage">
-                    <img src="https://placehold.co/600x400/298218/FFFFFF?text=Image+de+groupe" alt="Group of smiling people">
+            <h2 class="section-title">APROPOS DE NOUS</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-users"></i>
+                        <p>Communauté unie</p>
+                    </div>
                 </div>
                 <div class="about-text">
-                    <h2>À PROPOS DE NOUS</h2>
-                    <p>MOSUNGI est une organisation CONGOLAISE créée et pilotée par des avocats,médecins,sociologues, psychologues et juristes pour les femmes et filles, hommes et garçons. Il s'agit d'une équipe pluridisciplinaire. L'organisation humanitaire est composée d'une équipe d'experts et de professionnels.</p>
-                    <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en général, mettre fin aux guerres, conflits et rétablir la paix dans nos communautés. Nous aspirons à un avenir où les droits de chaque personne sont respectés.</p>
-                    <p>Nous croyons que cela est possible grâce à une action collective. Nous nous engageons à travailler sans relâche pour atteindre nos objectifs. Nos services sont une réponse efficace, coordonnée et adaptée aux besoins des communautés touchées par les conflits.</p>
+                    <p><strong>MOSUNGI</strong> est une organisation <strong>CONGOLAISE</strong> créée et fondée par des <strong>CONGOLAIS</strong> expérimentés sur la thématique en vue de venir en aide aux victimes liées aux conflits et lutter contre les inégalités de genre.</p>
+                    
+                    <p>Notre équipe dédiée travaille sans relâche pour protéger les communautés et lutter contre les violences sexuelles liées aux conflits. Nous offrons des services holistiques : soins médicaux, psychologiques et juridiques pour les survivants, ainsi que des programmes de sensibilisation et de prévention.</p>
+                    
+                    <p>Nous nous engageons à promouvoir la paix, la réconciliation et à lutter contre l'impunité des auteurs de crimes. Nos valeurs guides sont le respect, l'intégrité, la solidarité et l'engagement envers les communautés que nous servons.</p>
                 </div>
             </div>
-            <div class="vision-mission">
-                <div class="vision-text">
-                    <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en général, mettre fin aux guerres, conflits et rétablir la paix dans nos communautés. Nous aspirons à un avenir où les droits de chaque personne sont respectés.</p>
-                </div>
-                <div class="mission-text">
-                    <p>La mission de notre organisation humanitaire est de fournir une aide et un soutien adaptés à leurs besoins. Nous travaillons à mobiliser des ressources et à sensibiliser le public aux défis auxquels nos communautés sont confrontées.</p>
+            
+            <!-- Vision Section -->
+            <div class="vision-section">
+                <div class="vision-content">
+                    <div class="eye-image">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="vision-text">
+                        <h3>Notre Vision</h3>
+                        <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en général, mettre fin aux violences sexuelles liées aux conflits en promouvant la protection des communautés et de créer un monde où chaque individu est protégé et respecté.</p>
+                        <p>Nous aspirons à un avenir où les communautés affectées par les conflits vivent dans la paix et la sécurité, et où les droits et la dignité de chacun sont respectés pour un développement durable.</p>
+                    </div>
                 </div>
             </div>
-             <div class="eyes-section">
-                <img src="https://placehold.co/400x250/003366/FFFFFF?text=Gros+plan+oeil+1" alt="Close up of an eye">
-                <img src="https://placehold.co/400x250/003366/FFFFFF?text=Gros+plan+oeil+2" alt="Close up of an eye">
+            
+            <!-- Mission Section -->
+            <div class="mission-section">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h3>Notre Mission</h3>
+                        <p>La mission de notre organisation humanitaire est de fournir une aide et un soutien aux victimes de conflits avec un accent mis sur les violences sexuelles.</p>
+                        <p>Nous travaillons pour mobiliser et sensibiliser les communautés à la prévention de la violence et fournir des réponses holistiques (soins médicaux, psychologiques, sociaux et juridiques pour les survivants).</p>
+                        <p>Notre objectif est de créer un environnement sûr et protecteur pour les communautés affectées par les conflits, en particulier pour les femmes et les enfants qui sont les plus exposés.</p>
+                    </div>
+                    <div class="eye-image">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="services">
+    <!-- Services Section -->
+    <section id="services" class="services">
         <div class="container">
-            <h2>NOS SERVICES</h2>
-            <div class="services-grid">
-                <div class="service-card">
+            <h2 class="section-title">NOS SERVICES</h2>
+            <div class="services-cards">
+                <a href="formation-premiers-secours.html" class="service-card service-link">
                     <h3>Formation Aux Premiers Secours</h3>
-                    <p>Selon une étude menée par l'Organisation Mondiale de la Santé, seulement 10% de la population mondiale à accès à des services de premiers secours de base.</p>
-                    <a href="#" class="read-more">→</a>
-                </div>
-                <div class="service-card">
+                    <p>Selon une étude menée par l'Organisation mondiale de la santé en 2018, seulement 10% de la population mondiale a accès à des services de premiers secours de base.</p>
+                    <div class="service-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="assistance-psychosocial.html" class="service-card service-link">
                     <h3>Assistance & Soutiens Psychosocial</h3>
                     <p>Selon les Nations Unies, les conflits armés en Afrique ont été marqués par une utilisation généralisée de violences sexuelles comme tactique de guerre.</p>
-                    <a href="#" class="read-more">→</a>
-                </div>
+                    <div class="service-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="values">
+    <!-- Values Section -->
+    <section id="valeurs" class="values">
         <div class="container">
-            <h2>NOS VALEURS</h2>
+            <h2 class="section-title">NOS VALEURS</h2>
             <div class="values-grid">
                 <div class="value-item respect">Respect</div>
-                <div class="value-item integrite">Intégrité</div>
-                <div class="value-item solidarite">Solidarité</div>
-                <div class="value-item responsabilite">Responsabilité</div>
-                <div class="value-item empathie">Empathie</div>
+                <div class="value-item integrity">Intégrité</div>
+                <div class="value-item solidarity">Solidarité</div>
+                <div class="value-item responsibility">Responsabilité</div>
+                <div class="value-item empathy">Empathie</div>
                 <div class="value-item collaboration">Collaboration</div>
                 <div class="value-item engagement">Engagement</div>
-                <div class="value-item professionnalisme">Professionnalisme</div>
+                <div class="value-item professionalism">Professionnalisme</div>
             </div>
         </div>
     </section>
 
-    <section class="governance" id="gouvernance">
-        <div class="container governance-content">
-            <div class="governance-text">
-                <h2>La gouvernance de la Fondation MOSUNGI est basée sur des principes de crédibilité, de transparence, de responsabilité et de participation. Elle est dirigée par un conseil d'administration composé de membres expérimentés et engagés. Ils supervisent les activités de l'organisation et prennent des décisions stratégiques.</h2>
-                <p>L'équipe de direction est responsable de la mise en œuvre des décisions du conseil d'administration et de la gestion quotidienne de l'organisation. Nous travaillons en étroite collaboration avec les communautés touchées par les conflits et nous assurons une utilisation efficace et transparente des ressources.</p>
-            </div>
-            <div class="governance-image">
-                <img src="https://placehold.co/600x400/F5E800/FFFFFF?text=Gouvernance" alt="People in a meeting, symbolizing governance">
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog" id="blog">
+    <!-- Governance Section -->
+    <section id="gouvernance" class="governance">
         <div class="container">
-            <h2>Derniers Articles</h2>
-            <div class="blog-grid">
-                <div class="blog-post">
-                    <img src="https://placehold.co/600x400/003366/FFFFFF?text=Article+1" alt="Article Image 1">
-                    <div class="blog-content">
-                        <h3>L'impact de la Fondation MOSUNGI sur la paix</h3>
-                        <p>Découvrez comment nos actions contribuent à bâtir un avenir plus sûr et plus pacifique pour tous.</p>
-                        <a href="#">Lire la suite</a>
+            <div class="governance-content">
+                <div class="governance-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-handshake"></i>
+                        <p>Gouvernance participative</p>
                     </div>
                 </div>
-                <div class="blog-post">
-                    <img src="https://placehold.co/600x400/298218/FFFFFF?text=Article+2" alt="Article Image 2">
-                    <div class="blog-content">
-                        <h3>Assistance psychosociale : un pilier essentiel</h3>
-                        <p>Plongez dans l'importance du soutien psychologique pour les victimes de conflits et de violences.</p>
-                        <a href="#">Lire la suite</a>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <img src="https://placehold.co/600x400/D36C18/FFFFFF?text=Article+3" alt="Article Image 3">
-                    <div class="blog-content">
-                        <h3>Témoignages : Une vie transformée</h3>
-                        <p>Lisez les histoires de ceux qui ont bénéficié de nos services et retrouvé espoir et dignité.</p>
-                        <a href="#">Lire la suite</a>
-                    </div>
+                <div class="governance-text">
+                    <p>La gouvernance de la Fondation MOSUNGI est basée sur des principes de redevabilité, de transparence, de responsabilité et participation. Elle est dirigée par un conseil d'administration composé de membres expérimentés et engagés, qui supervisent les activités de l'organisation et prennent des décisions stratégiques.</p>
+                    
+                    <p>L'équipe de direction est responsable de la mise en œuvre des décisions du conseil d'administration et de la gestion quotidienne de l'organisation. Les communautés touchées par les conflits sont également impliquées dans la gouvernance de l'organisation, en tant que partenaires et bénéficiaires de ses actions à travers un comité de pilotage.</p>
+                    
+                    <p>Des mécanismes de reddition de comptes sont en place pour assurer une utilisation efficace et transparente des ressources et pour garantir que les activités de notre organisation sont en accord avec sa mission et ses valeurs.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team" id="equipe">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <h2>Notre Équipe</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="https://placehold.co/150x150/003366/FFFFFF?text=Membre+1" alt="Team Member 1">
-                    <h3>John Doe</h3>
-                    <p class="role">Directeur Exécutif</p>
-                    <p>Expert en gouvernance et en gestion de projets humanitaires, il est le pilier de notre organisation.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Rendez-vous</h2>
+                    <h3>Entre en contact avec Nous</h3>
+                    <p>Très loin, au cœur des communautés blessées par les conflits, là où la dignité est menacée, la Fondation Mosungi s'élève pour protéger, soigner et redonner espoir.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@mosungi.org</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+243998777770</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="team-member">
-                    <img src="https://placehold.co/150x150/298218/FFFFFF?text=Membre+2" alt="Team Member 2">
-                    <h3>Jane Smith</h3>
-                    <p class="role">Responsable des Opérations</p>
-                    <p>Avec une solide expérience sur le terrain, elle s'assure que nos projets sont mis en œuvre efficacement.</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://placehold.co/150x150/D36C18/FFFFFF?text=Membre+3" alt="Team Member 3">
-                    <h3 class="name">Paul Leblanc</h3>
-                    <p class="role">Coordinateur du Soutien Psychosocial</p>
-                    <p>Psychologue clinicien, il dirige notre équipe de soutien pour aider les personnes traumatisées.</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://placehold.co/150x150/8327B6/FFFFFF?text=Membre+4" alt="Team Member 4">
-                    <h3 class="name">Marie Dubois</h3>
-                    <p class="role">Juriste en Droit Humanitaire</p>
-                    <p>Elle s'assure que toutes nos actions respectent les lois internationales et les droits de l'homme.</p>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Téléphone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" name="subject" required>
+                                <option value="">Sélectionner un objet</option>
+                                <option value="information">Demande d'information</option>
+                                <option value="aide">Demande d'aide</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="don">Faire un don</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contact">
-        <div class="container contact-grid">
-            <div class="contact-info">
-                <h2>Entre en contact avec Nous</h2>
-                <p>Très loin, au cœur des communautés blessées par les conflits, là où la dignité est menacée, la Fondation Mosungi s'élève pour protéger, soigner et redonner espoir.</p>
-                <p><i class="fas fa-envelope"></i> contact@mosungi.org</p>
-                <p><i class="fas fa-phone"></i> +243998777770</p>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Nom" required>
-                    <input type="tel" placeholder="Téléphone">
-                    <input type="email" placeholder="Email" required>
-                    <input type="text" placeholder="Objet">
-                    <textarea placeholder="Message"></textarea>
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="https://placehold.co/150x50/FFFFFF/003366?text=LOGO" alt="Fondation MOSUNGI Logo">
-                <a href="https://wa.me/votre_numero" target="_blank" class="btn btn-whatsapp-footer"><i class="fab fa-whatsapp"></i> Connect on WhatsApp</a>
-            </div>
-            <div class="footer-nav">
-                <h3>Mosungi</h3>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#decouvrir">Découvrir</a></li>
-                    <li><a href="#gouvernance">Gouvernance</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#equipe">Notre Équipe</a></li>
-                </ul>
-            </div>
-            <div class="footer-info">
-                <h3>Infos Officielles</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Avenue de la justice... #4, Commune de la Gombe/Kinshasa/RDC</p>
-                <p><i class="fas fa-envelope"></i> contact@mosungi.org</p>
-                <p><i class="fas fa-phone"></i> +243998777770</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">+</div>
+                        <span>Fondation Mosungi</span>
+                    </div>
+                    <button class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        Connect on Whatsapp
+                    </button>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Mosungi</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">Découvrabilité</a></li>
+                        <li><a href="#gouvernance">Gouvernance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-info">
+                    <h4>Infos Officielles</h4>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Avenue de la justice, 54, Résidence Victor. Kinshasa/Gombe</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@mosungi.org</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+243998777770</span>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.querySelector('.main-nav-menu');
-
-            mobileMenu.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-
-            // Fermer le menu après un clic sur un lien
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                });
-            });
-
-            const contactForm = document.querySelector('.contact-form form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // NOTE: This alert() is for demonstration only as canvas cannot show alerts.
-                    // For a real app, use a modal or a message on the page.
-                    alert('Merci pour votre message ! Nous vous contacterons bientôt.');
-                    this.reset();
-                });
-            }
-
-            const header = document.querySelector('.main-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
