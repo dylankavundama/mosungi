@@ -1144,7 +1144,7 @@ h1, h2, h3 {
 
 /* Style pour la nouvelle section "hero" de la page de formation */
 .hero-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-page-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sec/a.jpg') no-repeat center center/cover;
     background-size: cover;
     background-position: center;
     color: white;
@@ -1207,5 +1207,26 @@ h1, h2, h3 {
     }
     .content-block img, .content-block .text-block {
         max-width: 100%;
+    }
+}
+/* Section avec les blocs vides */
+.empty-blocks-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.empty-block {
+    height: 250px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajustement pour les mobiles */
+@media (max-width: 768px) {
+    .empty-blocks-container {
+        grid-template-columns: 1fr;
     }
 }
