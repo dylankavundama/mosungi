@@ -103,3 +103,39 @@
         gap: 20px;
     }
 }
+
+
+
+
+/* Styles pour la page de détails de l'article */
+.hero-blog-detail {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-blog.jpg');
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-detail-section {
+    padding: 60px 20px;
+}
+
+.article-content {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.article-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+    color: #333;
+}
