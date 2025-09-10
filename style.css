@@ -201,7 +201,7 @@ html, body {
 
 
 .hero-section {
-    background-image: url('images/hero-hands.jpg');
+    background-image: url('images/New folder/hero.jpg');
     background-size: cover; /* Assure que l'image couvre toute la zone, sans déformation */
     background-position: center center; /* Centre l'image pour un meilleur rendu */
     background-repeat: no-repeat;
@@ -1062,7 +1062,7 @@ h1, h2, h3 {
 
 /* Second Hero Section */
 .hero-second-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-hands.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/New folder/hero.jpg') no-repeat center center/cover;
     background-size: cover;
     background-position: center;
     color: white;
