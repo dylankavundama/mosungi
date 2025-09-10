@@ -100,86 +100,70 @@ ul {
 }
 
 /* Header */
-header {
+ header {
     background: var(--primary-blue);
     color: white;
 }
 
+/* Barre du haut super compacte */
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 40px;
-    font-size: 0.85em;
+    padding: 2px 15px; /* très fine */
+    font-size: 0.7em; /* texte plus petit */
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .topbar-left span {
-    margin-right: 20px;
+    margin-right: 8px;
 }
 
 .topbar-right {
     display: flex;
-    gap: 20px;
+    gap: 8px;
     align-items: center;
-}
-
-.topbar-right span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
 }
 
 .topbar-right span i {
-    font-size: 1.1em;
+    font-size: 0.8em; /* icônes plus petites */
 }
 
+/* Navigation principale ultra compacte */
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 5px 15px; /* réduit au minimum */
 }
 
+/* Logo encore plus petit */
 .main-nav .logo img {
-    height: 50px; /* Adjust logo size */
+    height: 28px; /* taille réduite */
 }
 
-/* If using text logo */
+/* Logo texte */
 .main-nav .logo h2 {
     color: white;
     margin: 0;
-    font-size: 1.8em;
+    font-size: 1.1em;
 }
 
+/* Liens du menu plus discrets */
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    padding: 5px 0;
+    font-weight: 500;
+    font-size: 0.8em; /* petit texte */
+    padding: 2px 0;
     position: relative;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transition: width 0.3s ease-in-out;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
 
 .menu-toggle {
     display: none; /* Hidden on desktop */
@@ -1079,6 +1063,7 @@ h1, h2, h3 {
 .hero-second-content h2 {
     font-size: 2.8em; /* Taille du titre */
     margin-bottom: 20px;
+    text-align: left;
     line-height: 1.2;
     font-family: 'Oswald', sans-serif; /* Utilisez la police de votre choix */
 }
@@ -1140,93 +1125,3 @@ h1, h2, h3 {
 
 
 
-
-
-/* Style pour la nouvelle section "hero" de la page de formation */
-.hero-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/sec/a.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 100px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 300px;
-    text-align: center;
-    margin-top: 70px;
-}
-
-.hero-page h2 {
-    font-size: 3em;
-    color: white;
-}
-
-/* Section de contenu de la page */
-.content-section {
-    padding: 80px 40px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.content-block {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 60px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    padding: 20px;
-}
-
-.content-block.reverse {
-    flex-direction: row-reverse;
-}
-
-.content-block img {
-    flex: 1;
-    max-width: 50%;
-    border-radius: 8px;
-    object-fit: cover;
-    height: 400px;
-}
-
-.content-block .text-block {
-    flex: 1;
-    max-width: 50%;
-    padding: 20px;
-}
-
-/* Ajustements pour les mobiles */
-@media (max-width: 768px) {
-    .content-block, .content-block.reverse {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .content-block img, .content-block .text-block {
-        max-width: 100%;
-    }
-}
-/* Section avec les blocs vides */
-.empty-blocks-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.empty-block {
-    height: 250px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-/* Ajustement pour les mobiles */
-@media (max-width: 768px) {
-    .empty-blocks-container {
-        grid-template-columns: 1fr;
-    }
-}
