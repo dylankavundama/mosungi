@@ -142,8 +142,9 @@ ul {
 /* Logo texte */
  /* Style par défaut : logo image visible, texte caché */
 .main-nav .logo img {
-    height: 35px;
+    height: 55px;
     display: block;
+    position: relative;
 }
 
 .main-nav .logo h2 {
