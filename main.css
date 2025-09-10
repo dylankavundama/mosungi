@@ -1,12 +1,15 @@
-.logo-circle {
-  width: 50px;          /* taille à ajuster */
-  height: 60px;
-  align-items: center;
-  border-radius: 550%;    /* rend l’image circulaire */
-  object-fit: cover;     /* évite la déformation */
-  background:  whitesmoke;   /* couleur de fond derrière */
-  padding: 5px;         /* espace autour de l’image */
+ .logo-circle {
+  width: 30px;              /* largeur du cercle */
+  height: 60px;             /* hauteur identique pour un vrai cercle */
+  border-radius: 100%;       /* rend l’image circulaire */
+  object-fit: cover;        /* évite la déformation */
+  background: whitesmoke;   /* couleur de fond */
+  padding: 3px;             /* espace autour de l’image */
+  display: flex;            /* permet le centrage */
+  align-items: center;      /* centre verticalement */
+  justify-content: center;  /* centre horizontalement */
 }
+
 
 
 

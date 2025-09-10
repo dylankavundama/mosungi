@@ -137,17 +137,32 @@ ul {
     padding: 5px 15px; /* réduit au minimum */
 }
 
-/* Logo encore plus petit */
-.main-nav .logo img {
-    height: 50px; /* taille réduite */
-}
+ 
 
 /* Logo texte */
+ /* Style par défaut : logo image visible, texte caché */
+.main-nav .logo img {
+    height: 35px;
+    display: block;
+}
+
 .main-nav .logo h2 {
+    display: none; /* caché par défaut */
     color: white;
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
+
+/* Sur mobile : cacher l'image et afficher le texte */
+@media (max-width: 768px) {
+    .main-nav .logo img {
+        display: none;
+    }
+    .main-nav .logo h2 {
+        display: block;
+    }
+}
+
 
 /* Liens du menu plus discrets */
 .nav-links {
