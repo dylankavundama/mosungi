@@ -1,266 +1,422 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fondation Mosungi - Protection des communautés affectées par les conflits</title>
-    <meta name="description" content="La Fondation Mosungi s'engage à protéger, soigner et redonner espoir aux communautés blessées par les conflits, avec un focus sur la lutte contre les violences sexuelles.">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Fondation Mosungi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cossette+Titre:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="top-bar">
-            <div class="container">
-                <div class="contact-info">
-                    <span><i class="fas fa-map-marker-alt"></i> Avenue de la Justice, 54, Residence Victor, Kinshasa/Gombe</span>
-                    <span><i class="fas fa-envelope"></i> contact@mosungi.org</span>
-                    <span><i class="fab fa-whatsapp"></i> Connect on Whatsapp</span>
-                </div>
+
+    <header>
+
+        <nav class="main-nav">
+            <div class="logo">
+               <img src="./logo.jpg" alt="Fondation Mosungi Logo" class="logo-circle">
+
             </div>
-        </div>
-        
-        <nav class="navbar">
-            <div class="container">
-                <div class="nav-brand">
-                    <div class="logo">
-                        <div class="logo-icon">+</div>
-                        <span>Fondation Mosungi</span>
-                    </div>
-                </div>
-                
-                <div class="nav-menu" id="navMenu">
-                    <a href="#accueil" class="nav-link active">ACCUEIL</a>
-                    <a href="#apropos" class="nav-link">DECOUVRIR</a>
-                    <a href="#gouvernance" class="nav-link">GOUVERNANCE</a>
-                </div>
-                
-                <button class="cta-button">Contactez Nous</button>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+
+
+
+            <ul class="nav-links">
+                <li><a href="#accueil">ACCUEIL</a></li>
+                <li><a href="#decouvrir">DÉCOUVRIR</a></li>
+                <li><a href="#blog-section">BLOG</a></li>
+                <li><a href="#equipe-section">NOTRE ÉQUIPE</a></li>
+                <li><a href="#gouvernance-section">GOUVERNANCE</a></li>
+            </ul> <a href="#contact-section" class="btn btn-contact">Contactez-nous</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="accueil" class="hero">
-        <div class="hero-background">
-            <img src="images/hero-hands.jpg.jpg" alt="Mains unies pour la protection" class="hero-image-bg">
-            <div class="hero-overlay">
-                <h1>Ensemble, protégeons les vies et la dignité</h1>
+
+    <section class="hero-second-section">
+        <div class="hero-second-content">
+            <h2 style="color: aliceblue; text-align: left;">Fondation Mosungi</h2>
+            <p style="color: aliceblue; text-align: left;">Ensemble, construisons un monde <br>
+                où chaque vie est protégée et valorisée <br> où la justice triomphe et la paix règne.</p>
+
+        </div>
+    </section>
+    <section class="about-section" id="decouvrir">
+        <div class="about-content">
+            <div class="image-block">
+                <img src="images/community-group.jpg" alt="Équipe Mosungi" style="height:430px; object-fit: cover;">
+            </div>
+            <div class="text-block">
+                <h2>À PROPOS DE NOUS</h2>
+                <p>MOSUNGI est une organisation CONGOLAISE créée et fondée par des Congolais expérimentés sur la
+                    thématique des violences en lien aux conflits. La fondation Mosungi est composée d’une équipe
+                    dynamique, soudée et proactive, expérimentée dans la thématique des violences sexuelles liées aux
+                    conflits. La Fondation Mosungi s'est donnée pour mission d'agir et de fournir une aide et un soutien
+                    adaptés à leurs besoins. </p>
+                <p>Notre mission est d'apporter une assistance humanitaire, psychologique et juridique aux survivant-es,
+                    ainsi que des actions ciblées, innovantes et un plaidoyer fort contre ces actes de violence. Notre
+                    vision est d'œuvrer et de s'engager à promouvoir la paix et la réconciliation dans les zones
+                    touchées par les conflits et de lutter contre l'impunité pour les auteurs de ces crimes. Nous
+                    accompagnons les victimes pour restaurer leur dignité, respect, l'intégrité, la solidarité et
+                    l'engagement envers les communautés que nous servons.</p>
+            </div>
+
+        </div>
+    </section>
+    <hr style="border: none; height: 1px; background-color: #00A0DF;">
+
+    <section class="about-section" id="decouvrir">
+        <div class="about-content">
+            <div class="text-block">
+
+                <p>Notre mission est d'apporter une assistance humanitaire, psychologique et juridique aux survivant-es,
+                    ainsi que des actions ciblées, innovantes et un plaidoyer fort contre ces actes de violence. Notre
+                    vision est d'œuvrer et de s'engager à promouvoir la paix et la réconciliation dans les zones
+                    touchées par les conflits et de lutter contre l'impunité pour les auteurs de ces crimes. Nous
+                    accompagnons les victimes pour restaurer leur dignité, respect, l'intégrité, la solidarité et
+                    l'engagement envers les communautés que nous servons.</p>
+            </div>
+            <div class="image-block">
+                <img src="images/mission.jpeg" alt="Équipe Mosungi" style="height:200px; object-fit: cover;">
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="apropos" class="about">
-        <div class="container">
-            <h2 class="section-title">APROPOS DE NOUS</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/community-group.jpg.png" alt="Communauté unie" class="about-img">
-                </div>
-                <div class="about-text">
-                    <p><strong>MOSUNGI</strong> est une organisation <strong>CONGOLAISE</strong> créée et fondée par des <strong>CONGOLAIS</strong> expérimentés sur la thématique en vue de venir en aide aux victimes liées aux conflits et lutter contre les inégalités de genre.</p>
-                    
-                    <p>Notre équipe dédiée travaille sans relâche pour protéger les communautés et lutter contre les violences sexuelles liées aux conflits. Nous offrons des services holistiques : soins médicaux, psychologiques et juridiques pour les survivants, ainsi que des programmes de sensibilisation et de prévention.</p>
-                    
-                    <p>Nous nous engageons à promouvoir la paix, la réconciliation et à lutter contre l'impunité des auteurs de crimes. Nos valeurs guides sont le respect, l'intégrité, la solidarité et l'engagement envers les communautés que nous servons.</p>
-                </div>
+    <section class="mission-vision-section blue-bg">
+        <div class="mission-vision-content">
+            <div class="text-block">
+                <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en
+                    général, mettre fin aux violences sexuelles liées aux conflits en République Démocratique du Congo
+                    et travailler à la pleine réalisation des droits de l'homme. La mission de notre organisation est de
+                    protéger et respecter, Nous aspirons à un avenir où les communautés affectées par les conflits
+                    vivent dans la paix, la sécurité, et où les droits et la dignité de chaque personne sont respectés,
+                    quelle que soit leur nationalité ou leur origine.</p>
+                <p>Nous croyons que cela est possible grâce à une action collective et une forte mobilisation de tous
+                    les acteurs impliqués dans les conflits, ainsi qu'une réponse efficace, coordonnée et adaptée aux
+                    défis de protection et de prévention des violences basées sur le genre. Nous sommes déterminés à
+                    travailler sans relâche pour atteindre cet objectif et à faire une différence significative dans la
+                    vie des communautés qui ne soient plus jamais tolérées ni acceptées dans notre société.</p>
             </div>
-            
-            <!-- Vision Section -->
-            <div class="vision-section">
-                <div class="vision-content">
-                    <div class="eye-image">
-                        <img src="images/vision-eye.jpg" alt="Vision" class="eye-img">
-                    </div>
-                    <div class="vision-text">
-                        <h3>Notre Vision</h3>
-                        <p>La vision de notre organisation humanitaire est de sauver des vies en luttant contre les violences en général, mettre fin aux violences sexuelles liées aux conflits en promouvant la protection des communautés et de créer un monde où chaque individu est protégé et respecté.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Mission Section -->
-            <div class="mission-section">
-                <div class="mission-content">
-                    <div class="mission-text">
-                        <h3>Notre Mission</h3>
-                        <p>La mission de notre organisation humanitaire est de fournir une aide et un soutien aux victimes de conflits avec un accent mis sur les violences sexuelles. Nous travaillons pour mobiliser et sensibiliser les communautés à la prévention de la violence et fournir des réponses holistiques (soins médicaux, psychologiques, sociaux et juridiques pour les survivants).</p>
-                    </div>
-                    <div class="eye-image">
-                        <img src="images/mission-eye.jpg" alt="Mission" class="eye-img">
-                    </div>
-                </div>
+            <div class="image-block">
+                <img src="images/vision-eye.jpg" alt="Oeil symbolisant la vigilance"
+                    style="height:400px; object-fit: cover;">
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">NOS SERVICES</h2>
-            <div class="services-cards">
-                <a href="formation-premiers-secours.html" class="service-card service-link">
-                    <h3>Formation Aux Premiers Secours</h3>
-                    <p>Selon une étude menée par l'Organisation mondiale de la santé en 2019, seulement 10% de la population mondiale a accès à des services de premiers secours de base.</p>
-                    <div class="service-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
-                
-                <a href="assistance-psychosocial.html" class="service-card service-link">
-                    <h3>Assistance & Soutiens Psychosocial</h3>
-                    <p>Selon les Nations Unies, les conflits armés en Afrique ont été marqués par une utilisation généralisée de violences sexuelles comme technique de guerre.</p>
-                    <div class="service-arrow">
-                        <i class="fas fa-arrow-right"></i>
-                    </div>
-                </a>
+    <section class="conflict-victims-section white-bg">
+        <div class="conflict-victims-content">
+            <div class="image-block">
+                <img src="images/mission-eye.jpg" alt="Personnes se tenant les mains"
+                    style="height:400px; object-fit: cover;">
+            </div>
+            <div class="text-block">
+                <p>La mission de notre organisation humanitaire est de fournir une assistance aux victimes des violences
+                    en lien aux conflits, en particulier sur les violences sexuelles. Nous travaillons à mobiliser,
+                    sensibiliser et former des communautés pour prévenir et répondre à ces violences. Nous fournissons
+                    également un soutien médical, psychosocial et juridique aux victimes, et nous militons pour
+                    l'égalité des sexes. </p>
+                <p>Notre programme vise à prévenir la violence, à lutter contre l'impunité, à renforcer les capacités de
+                    réponse locales et à promouvoir la cohésion sociale. Nous agissons au cœur des communautés touchées
+                    par les conflits, en particulier pour les femmes et les filles, qui sont souvent les plus
+                    vulnérables aux violences sexuelles. Nous nous engageons à défendre les droits de chaque personne, à
+                    promouvoir la paix, la réconciliation, la vie ensemble, et à la dignité pour toutes les victimes, et
+                    pour les personnes marginalisées, en vue de garantir que les droits humains sont respectés et
+                    protégés.</p>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section id="valeurs" class="values">
-        <div class="container">
-            <h2 class="section-title">NOS VALEURS</h2>
-            <div class="values-grid">
-                <div class="value-item respect">Respect</div>
-                <div class="value-item integrity">Intégrité</div>
-                <div class="value-item solidarity">Solidarité</div>
-                <div class="value-item responsibility">Responsabilité</div>
-                <div class="value-item empathy">Empathie</div>
-                <div class="value-item collaboration">Collaboration</div>
-                <div class="value-item engagement">Engagement</div>
-                <div class="value-item professionalism">Professionnalisme</div>
+    <section class="services-section" id="services">
+        <h2>NOS SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Formation Aux Premiers Secours</h3>
+                <p>Selon une étude menée par l'Organisation Mondiale de la Santé (OMS), seulement 10% de la population
+                    mondiale à accès à des services de premiers secours de base.</p>
+                <a href="#" class="learn-more"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-box">
+                <h3>Assistance & Soutiens Psychosocial</h3>
+                <p>Selon les Nations Unies, les conflits armés en RDC ont marqué par une utilisation généralisée de
+                    violences sexuelles comme tactique de guerre.</p>
+                <a href="#" class="learn-more"><i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Governance Section -->
-    <section id="gouvernance" class="governance">
-        <div class="container">
-            <div class="governance-content">
-                <div class="governance-image">
-                    <img src="images/governance-community.jpg" alt="Gouvernance participative" class="governance-img">
+<section class="values-section">
+    <h2>NOS VALEURS</h2>
+    <div class="values-grid">
+        <div class="value-tag-wrapper">
+            <span class="value-tag v1">Respect</span>
+            <div class="value-description">Le respect est au cœur de notre action. Nous honorons la dignité et les droits de chaque individu.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v2">Intégrité</span>
+            <div class="value-description">Nous agissons avec honnêteté et transparence, en respectant nos engagements.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v3">Solidarité</span>
+            <div class="value-description">Nous unissons nos forces pour soutenir les communautés les plus vulnérables.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v4">Responsabilité</span>
+            <div class="value-description">Nous sommes redevables de nos actions et de leur impact sur les communautés que nous servons.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v5">Empathie</span>
+            <div class="value-description">Nous écoutons et comprenons les besoins des victimes pour leur apporter un soutien adapté.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v6">Collaboration</span>
+            <div class="value-description">Nous travaillons main dans la main avec nos partenaires pour maximiser notre impact.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v7">Engagement</span>
+            <div class="value-description">Notre dévouement envers notre mission est total, pour un avenir de paix.</div>
+        </div>
+        <div class="value-tag-wrapper">
+            <span class="value-tag v8">Professionnalisme</span>
+            <div class="value-description">Nous mettons à disposition notre expertise pour fournir une aide de qualité.</div>
+        </div>
+    </div>
+</section>
+    <br>
+    <hr style="border: none; height: 1px; background-color: #00A0DF;">
+    <section class="team-section" id="equipe-section">
+        <h2>NOTRE ÉQUIPE</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/team/l_img_1435-1.jpeg" alt="Photo de l'équipe">
+                <h3>Nom et prénom</h3>
+                <p>Directeur Exécutif</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
                 </div>
-                <div class="governance-text">
-                    <p>La gouvernance de la Fondation MOSUNGI est basée sur des principes de redevabilité, de transparence, de responsabilité et participation. Elle est dirigée par un conseil d'administration composé de membres expérimentés et engagés, qui supervisent les activités de l'organisation et prennent des décisions stratégiques.</p>
-                    
-                    <p>L'équipe de direction est responsable de la mise en œuvre des décisions du conseil d'administration et de la gestion quotidienne de l'organisation. Les communautés touchées par les conflits sont également impliquées dans la gouvernance de l'organisation, en tant que partenaires et bénéficiaires de ses actions à travers un comité de pilotage.</p>
-                    
-                    <p>Des mécanismes de reddition de comptes sont en place pour assurer une utilisation efficace et transparente des ressources et pour garantir que les activités de notre organisation sont en accord avec sa mission et ses valeurs.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team/Tania.webp" alt="Photo de l'équipe">
+                <h3>Nom et prénom</h3>
+                <p>Responsable des programmes</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team/Ramzan_Kadyrov_(2018-06-15)_02.jpg" alt="Photo de l'équipe">
+                <h3>Nom et prénom</h3>
+                <p>Responsable juridique</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="images/team/Tania.webp" alt="Photo de l'équipe">
+                <h3>Nom et prénom</h3>
+                <p>Coordinateur de projets</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square"></i></a>
                 </div>
             </div>
         </div>
     </section>
+    <section class="governance-section" id="gouvernance-section">
+        <div class="governance-content">
+            <div class="image-block">
+                <img src="images/governance-community.jpg" alt="Gouvernance et communauté"
+                    style="height:370px; object-fit: cover;">
+            </div>
+            <div class="text-block">
+                <h2>Notre Gouvernance</h2>
+                <p>La gouvernance de la Fondation MOSUNGI est basée sur des principes de redevabilité, de transparence,
+                    et de participation inclusive. Elle est dirigée par un conseil d'administration composé de membres
+                    expérimentés et engagés, qui supervisent les activités de l'organisation et prennent des décisions
+                    stratégiques.</p>
+                <p>La direction exécutive est responsable de la mise en œuvre des décisions du conseil d'administration
+                    et de la gestion quotidienne de l'organisation. Les communautés touchées par les conflits sont
+                    également impliquées dans la gouvernance de la fondation par le biais de mécanismes de consultation
+                    et de participation. Nous mettons en place des mécanismes de reddition des comptes transparents des
+                    ressources et pour garantir que les activités de notre organisation sont en accord avec sa mission
+                    et ses valeurs.</p>
+            </div>
+        </div>
+    </section>
+    <hr style="border: none; height: 1px; background-color: #00A0DF;">
+    <section class="blog-section" id="blog-section">
+        <h2>NOS ACTUALITÉS</h2>
+        <div class="blog-grid">
+            <article class="blog-post">
+                <img src="images/article/pexels-ruvim-miksanskiy-1438761.jpg" alt="Description de l'article 2">
+                <div class="post-content">
+                    <h3>Lancement du programme de soutien psychosocial</h3>
+                    <p class="post-date">25 Août 2025</p>
+                    <p>Un nouveau programme de soutien psychosocial a été inauguré dans la région du Kivu. Ce projet
+                        vise à offrir des espaces de parole et des thérapies de groupe pour aider les survivant(e)s à
+                        surmonter les traumatismes liés aux conflits armés.</p>
+                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Entre en contact avec Nous</h2>
-                    <p>Très loin, au cœur des communautés blessées par les conflits, là où la dignité est menacée, la Fondation Mosungi s'élève pour protéger, soigner et redonner espoir.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>contact@mosungi.org</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+243998777770</span>
-                        </div>
-                    </div>
+            <article class="blog-post">
+                <img src="images/article/pexels-omaralnahi-18495.jpg" alt="Description de l'article 2">
+                <div class="post-content">
+                    <h3>Lancement du programme de soutien psychosocial</h3>
+                    <p class="post-date">25 Août 2025</p>
+                    <p>Un nouveau programme de soutien psychosocial a été inauguré dans la région du Kivu. Ce projet
+                        vise à offrir des espaces de parole et des thérapies de groupe pour aider les survivant(e)s à
+                        surmonter les traumatismes liés aux conflits armés.</p>
+                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
                 </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Nom" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Téléphone" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="subject" name="subject" required>
-                                <option value="">Sélectionner un objet</option>
-                                <option value="information">Demande d'information</option>
-                                <option value="aide">Demande d'aide</option>
-                                <option value="partenariat">Partenariat</option>
-                                <option value="don">Faire un don</option>
-                                <option value="autre">Autre</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Envoyer</button>
-                    </form>
+            </article>
+
+            <article class="blog-post">
+                <img src="images/article/pexels-rok-romih-3312678.jpg" alt="Description de l'article 3">
+                <div class="post-content">
+                    <h3>Visite de la délégation humanitaire de l'ONU</h3>
+                    <p class="post-date">14 Juillet 2025</p>
+                    <p>La Fondation Mosungi a eu l'honneur d'accueillir une délégation des Nations Unies pour une visite
+                        de terrain. La délégation a salué le travail de la fondation et a discuté des opportunités de
+                        partenariat pour étendre les opérations d'assistance humanitaire.</p>
+                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
                 </div>
+            </article>
+            <article class="blog-post">
+                <img src="images/article/a.jpg" alt="Description de l'article 1">
+                <div class="post-content">
+                    <h3>Sensibilisation et protection des victimes de conflits</h3>
+                    <p class="post-date">10 Septembre 2025</p>
+                    <p>À travers des ateliers communautaires, la Fondation Mosungi renforce la capacité des communautés
+                        à identifier et à protéger les victimes de violences sexuelles. Les participants apprennent les
+                        gestes de premiers secours et l'accompagnement psychosocial.</p>
+                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <img src="images/article/pexels-iurii-laimin-14570800.jpg" alt="Description de l'article 2">
+                <div class="post-content">
+                    <h3>Lancement du programme de soutien psychosocial</h3>
+                    <p class="post-date">25 Août 2025</p>
+                    <p>Un nouveau programme de soutien psychosocial a été inauguré dans la région du Kivu. Ce projet
+                        vise à offrir des espaces de parole et des thérapies de groupe pour aider les survivant(e)s à
+                        surmonter les traumatismes liés aux conflits armés.</p>
+                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <img src="images/article/pexels-joshua-welch-1624600.jpg" alt="Description de l'article 3">
+                <div class="post-content">
+                    <h3>Visite de la délégation humanitaire de l'ONU</h3>
+                    <p class="post-date">14 Juillet 2025</p>
+                    <p>La Fondation Mosungi a eu l'honneur d'accueillir une délégation des Nations Unies pour une visite
+                        de terrain. La délégation a salué le travail de la fondation et a discuté des opportunités de
+                        partenariat pour étendre les opérations d'assistance humanitaire.</p>
+                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+
+        </div>
+    </section>
+    <hr style="border: none; height: 1px; background-color: #00A0DF;">
+    <section class="contact-section" id="contact-section">
+        <div class="contact-container">
+            <div class="contact-info-block">
+                <h4>Rendez-nous </h4>
+
+                <h3 style="color: #00A0DF;  font-family: 'Oswald', sans-serif;"> Entre en contact avec Nous</h3>
+                <p>Très loin, au cœur des communautés blessées par les conflits. Là où la dignité est menacée, la
+                    Fondation Mosungi s'élève pour protéger, soigner et redonner espoir.</p>
+                <p class="contact-detail"><i class="fas fa-envelope"></i> contact@mosungi.org</p>
+                <p class="contact-detail"><i class="fas fa-phone"></i> +243998777700</p>
+            </div>
+            <div class="contact-form-block">
+                <form>
+                    <input type="text" placeholder="Nom" required>
+                    <input type="tel" placeholder="Téléphone" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Objet" required>
+                    <textarea placeholder="Message" rows="5"></textarea>
+                    <button type="submit" class="btn-send">Envoyer</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <div class="logo-icon">+</div>
-                        <span>Fondation Mosungi</span>
-                    </div>
-                    <button class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i>
-                        Connect on Whatsapp
-                    </button>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Mosungi</h4>
-                    <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#apropos">Découvrir</a></li>
-                        <li><a href="#gouvernance">Gouvernance</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-info">
-                    <h4>Infos Officielles</h4>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Avenue de la Justice, 54, Residence Victor, Kinshasa/Gombe</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>contact@mosungi.org</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+243998777770</span>
-                    </div>
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-logo-social">
+                <img src="./logo.jpg" alt="Fondation Mosungi Logo">
+                <a href="#" class="btn-whatsapp footer-whatsapp"><i class="fab fa-whatsapp"></i> Connect on Whatsapp</a>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+            <div class="footer-links">
+                <h3>Mosungi</h3>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#decouvrir">Découvrir</a></li>
+                    <li><a href="#gouvernance-section">Gouvernance</a></li>
+                </ul>
+            </div>
+            <div class="footer-official-info">
+                <h3>Infos Officielles</h3>
+                <p>Avenue de la Justice, 5A - Résidence Vicas, Kinshasa/Gombe</p>
+                <p style=" font-family: 'Roboto', sans-serif;">contact@mosungi.org</p>
+                <p>+243998777700</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fondation Mosungi - Tous droits réservés</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+
+            // Fermer le menu si on clique sur un lien
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>

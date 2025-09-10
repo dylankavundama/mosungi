@@ -1,0 +1,1211 @@
+/* Variables CSS pour les couleurs */
+:root {
+    --primary-blue: #00A0DF;
+    --dark-blue: #006090; /* Un bleu plus foncé pour le footer */
+    --accent-green: #00C853;
+    --text-color: #333;
+    --light-grey: #F9F9F9;
+    --dark-grey-text: #555;
+    --section-bg-blue: #E3F2FD; /* Couleur bleue claire pour les services */
+}
+ 
+
+ 
+
+ 
+h1, h2, h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--dark-grey-text);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Utility Classes */
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact {
+    background: var(--accent-green);
+    color: white;
+}
+
+.btn-contact:hover {
+    background: #00b347; /* Lighter green on hover */
+}
+
+.btn-whatsapp {
+    background: #25D366; /* WhatsApp brand green */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+}
+
+.btn-whatsapp i {
+    font-size: 1.1em;
+}
+
+.btn-whatsapp:hover {
+    background: #1da851;
+}
+
+.blue-bg {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.white-bg {
+    background-color: white;
+    color: var(--text-color);
+}
+
+/* Header */
+header {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 40px;
+    font-size: 0.85em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.topbar-left span {
+    margin-right: 20px;
+}
+
+.topbar-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.topbar-right span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.topbar-right span i {
+    font-size: 1.1em;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.main-nav .logo img {
+    height: 50px; /* Adjust logo size */
+}
+
+/* If using text logo */
+.main-nav .logo h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: white;
+}
+
+/* Hero Section */
+/* Hero Section */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* Prend toute la hauteur de l'écran */
+    min-height: 100vh; /* Force l'occupation de tout le viewport */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+
+.hero-section {
+    background-image: url('images/hero-hands.jpg');
+    background-size: cover; /* Assure que l'image couvre toute la zone, sans déformation */
+    background-position: center center; /* Centre l'image pour un meilleur rendu */
+    background-repeat: no-repeat;
+    height: 100vh; /* Permet à la section de prendre toute la hauteur de l'écran */
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px; /* Ajouter un padding pour que le texte ne colle pas aux bords sur petits écrans */
+    background-color: rgba(0, 0, 0, 0.4); /* Un léger fond semi-transparent pour la lisibilité du texte */
+    border-radius: 8px;
+}
+
+/* Vous avez un style inline pour le h2, c'est mieux de le mettre dans le CSS */
+.hero-section .hero-content h2 {
+    color: aliceblue; /* Ou directement white si c'est la couleur désirée */
+    font-size: 2.8em; /* Ajustez la taille si nécessaire */
+    margin: 0; /* Supprime la marge par défaut des titres */
+}
+
+/* Pour les écrans plus petits, ajuster la taille du titre */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 400px; /* Ajuster la hauteur minimum pour mobile */
+        height: 60vh;
+    }
+    .hero-section .hero-content h2 {
+        font-size: 2em; /* Taille de police plus petite sur mobile */
+    }
+    .hero-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 300px;
+        height: 50vh;
+    }
+    .hero-section .hero-content h2 {
+        font-size: 1.5em;
+    }
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+/* Section Styling (General) */
+section {
+    padding: 80px 40px; /* Consistent padding for sections */
+    max-width: 1200px; /* Slightly wider max-width for content */
+    margin: auto;
+}
+
+/* About, Mission, Governance Section Styles */
+.about-section, .mission-vision-section, .conflict-victims-section, .governance-section {
+    padding: 60px 40px; /* Slightly less padding for these content blocks */
+}
+.governance-section h2 {
+ font-family: 'Oswald', sans-serif;
+ 
+}
+
+.governance-section p {
+    font-family: 'Open Sans', sans-serif;
+}
+.about-section h2 {
+    font-family: 'Merriweather', serif;
+    /* Ajoutez d'autres styles pour le titre si nécessaire */
+}
+ 
+
+
+.about-section p {
+    font-family: 'Roboto', sans-serif;
+
+    /* Ajoutez d'autres styles pour le paragraphe si nécessaire */
+}
+.about-content, .mission-vision-content, .conflict-victims-content, .governance-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.about-content .text-block,
+.mission-vision-content .text-block,
+.conflict-victims-content .text-block,
+.governance-content .text-block {
+    flex: 1;
+}
+
+.about-content .image-block,
+.mission-vision-content .image-block,
+.conflict-victims-content .image-block,
+.governance-content .image-block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content img,
+.mission-vision-content img,
+.conflict-victims-content img,
+.governance-content img {
+    width: 100%;
+    max-width: 500px; /* Limit image size */
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Specific background colors for sections */
+.mission-vision-section {
+    background-color: var(--primary-blue); /* Match image 1 */
+    color: white;
+}
+.mission-vision-section h2 {
+    color: white;
+}
+
+.conflict-victims-section {
+    background-color: white; /* Match image 1 */
+}
+
+/* Services Section */
+.services-section {
+    background: var(--primary-blue); /* Match image 2 */
+    color: white;
+     margin-bottom: 60px;
+    text-align: center;
+}
+
+.services-section h2 {
+    color: white;
+     font-family: 'Oswald', sans-serif;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-box {
+    background: var(--section-bg-blue); /* Lighter blue */
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 180px; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-box h3 {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.service-box .learn-more {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-blue);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.service-box .learn-more:hover {
+    background: var(--dark-blue);
+}
+
+/* Values Section */
+/* Section des valeurs */
+.values-section {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+        background: var(--primary-blue); /* Match image 2 */
+}
+.values-section h2 {
+    color: white;
+    margin-bottom: 40px;
+}
+/* .values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 900px;
+    margin: auto;
+} */
+
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    max-width: 900px; /* Constrain width of values tags */
+    margin: auto;
+}
+
+/* Conteneur de chaque valeur (nouveau) */
+.value-tag-wrapper {
+    position: relative; /* Point de référence pour la description */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Style du tag de valeur */
+.value-tag {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 0px;
+    font-weight: bold;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style de la description cachée */
+.value-description {
+    position: absolute;
+    bottom: calc(100% + 15px); /* Position au-dessus du tag */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* L'info-bulle glisse vers le haut */
+    width: 250px;
+    padding: 15px;
+    background-color: var(--primary-blue); /* Couleur de fond */
+    color: white;
+    font-size: 0.9em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Rends la description invisible */
+    visibility: hidden; /* Cache la description pour la mise en page */
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    z-index: 5;
+    text-align: center;
+}
+
+/* Flèche sous la description */
+.value-description::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--primary-blue) transparent transparent transparent;
+}
+
+/* Règle au survol du conteneur parent */
+.value-tag-wrapper:hover .value-description {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Retourne à sa position normale */
+}
+
+/* Couleurs des tags */
+.v1 { background-color: #007bff; }
+.v2 { background-color: #28a745; }
+.v3 { background-color: #dc3545; }
+.v4 { background-color: #ffc107; }
+.v5 { background-color: #6610f2; }
+.v6 { background-color: #17a2b8; }
+.v7 { background-color: #fd7e14; }
+.v8 { background-color: #6f42c1; }
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--light-grey);
+    padding: 50px 30px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 33px;
+    justify-content: center;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.contact-info-block {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info-block h2 {
+    font-size: 2.5em;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.contact-info-block p {
+    font-size: 1.1em;
+    color: var(--dark-grey-text);
+}
+
+.contact-info-block .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: var(--primary-blue);
+    margin-top: 15px;
+}
+
+.contact-info-block .contact-detail i {
+    font-size: 1.3em;
+}
+
+.contact-form-block {
+    flex: 1;
+    min-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form-block form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form-block input,
+.contact-form-block textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    width: calc(100% - 30px); /* Account for padding */
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-block input:focus,
+.contact-form-block textarea:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+}
+
+.contact-form-block textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-send {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-send:hover {
+    background: var(--dark-blue);
+}
+
+/* Footer */
+footer {
+    background: var(--dark-blue); /* Darker blue for footer */
+    color: white;
+    padding: 50px 40px 20px;
+    text-align: center;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left; /* Align text left within grid items */
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo-social img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-social .footer-whatsapp {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    justify-content: center; /* Center button text */
+    width: fit-content;
+    padding: 8px 15px;
+    font-size: 1em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Center icons */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-green);
+}
+
+.footer-links h3,
+.footer-official-info h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+}
+
+.footer-official-info p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .topbar, .main-nav {
+        padding: 8px 20px;
+    }
+    .nav-links {
+        gap: 20px;
+    }
+    .about-content, .mission-vision-content, .conflict-victims-content, .governance-content {
+        flex-direction: column; /* Stack image and text */
+        gap: 30px;
+        align-items: center;
+    }
+    .about-content .image-block,
+    .mission-vision-content .image-block,
+    .conflict-victims-content .image-block,
+    .governance-content .image-block {
+        order: -1; /* Image first on smaller screens */
+        max-width: 600px;
+    }
+    .conflict-victims-content .image-block {
+        order: 1; /* Keep image on the right for this section if needed, or adjust */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav .nav-links {
+        display: none; /* Cachez le menu par défaut sur mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Position en dessous de l'en-tête */
+        left: 0;
+        width: 100%;
+        background: var(--primary-blue);
+        padding: 20px 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .main-nav .nav-links.active {
+        display: flex; /* Affichez le menu quand la classe .active est ajoutée par le JS */
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    .main-nav .btn-contact {
+        display: none; /* Cachez le bouton de contact dans la navigation mobile */
+    }
+
+    .menu-toggle {
+        display: block; /* Affichez l'icône du menu burger sur mobile */
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .topbar-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-top: 10px;
+    }
+    .btn-whatsapp {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-nav .nav-links {
+        display: none; /* Hide nav links on mobile by default */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Below header */
+        left: 0;
+        width: 100%;
+        background: var(--primary-blue);
+        padding: 20px 0;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .main-nav .nav-links.active {
+        display: flex; /* Show when active */
+    }
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+    }
+    .main-nav .btn-contact {
+        display: none; /* Hide contact button in nav on small screens */
+    }
+    .menu-toggle {
+        display: block; /* Show menu icon on mobile */
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+        min-height: 300px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Stack services vertically */
+    }
+    .service-box .learn-more {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .values-grid {
+        gap: 10px;
+    }
+    .value-tag {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-info-block, .contact-form-block {
+        min-width: unset;
+        width: 100%;
+    }
+    .contact-info-block h2 {
+        font-size: 2em;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-logo-social .footer-whatsapp,
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-links ul {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        font-size: 0.75em;
+    }
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .value-tag {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    .contact-info-block h2 {
+        font-size: 1.8em;
+    }
+}
+
+@font-face {
+    font-family: 'Bergen Sans';
+    src: url('./fonts/BergenSans-Regular.woff2') format('woff2'),
+         url('./fonts/BergenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Permet un chargement plus rapide */
+}
+
+@font-face {
+    font-family: 'Bergen Sans';
+    src: url('./fonts/BergenSans-Bold.woff2') format('woff2'),
+         url('./fonts/BergenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Appliquer la police sur tout le site */
+body {
+    margin: 0;
+    font-family: 'Bergen Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--light-grey);
+    scroll-behavior: smooth;
+}
+
+/* Les titres peuvent avoir un style différent si nécessaire */
+h1, h2, h3 {
+    font-family: 'Bergen Sans', sans-serif;
+    /* Autres styles... */
+}
+
+/* Le reste de votre code CSS... */
+
+
+
+
+/* Blog Section */
+/* Blog Section */
+.blog-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    background-image: url('images/blog-background.png'); /* Chemin vers votre image */
+    background-size: cover; /* Pour que l'image couvre toute la section */
+    background-repeat: no-repeat; /* Pour éviter la répétition si l'image est grande */
+    background-position: center center; /* Centrer l'image */
+    background-color: #eef7fc; /* Couleur de secours si l'image ne se charge pas */
+}
+
+/* Le reste de vos styles pour .blog-section, .blog-grid, .blog-post... */
+
+.blog-section h2 {
+    margin-bottom: 30px;
+     font-family: 'Oswald', sans-serif;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 19px;
+}
+
+.blog-post {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.blog-post .post-content p{
+    
+    /* margin: 6px 0;
+    overflow: hidden; */
+    text-align: left;
+    padding: 0 5px 5px 11px;
+    
+}
+
+.blog-post h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding: 0 5px 0 6px;
+      /* font-family: 'Poppins', sans-serif; */
+          font-family: 'Merriweather', serif;
+    color: var(--primary-blue);
+}
+
+.blog-post .post-date {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+ .blog-post p {
+  font-size: 0.90em;
+  color: var(--text-color);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* Limite à 2 lignes */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.blog-post .read-more {
+    display: inline-block;
+    margin-top: 0px;
+    text-decoration: none;
+
+    font-weight: bold;
+    color: var(--accent-green);
+    transition: color 0.3s ease;
+}
+
+.blog-post .read-more:hover {
+    color: red;
+}
+
+
+/* Team Section */
+.team-section {
+    padding: 80px 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.team-section h2 {
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    color: #333;
+     font-family: 'Oswald', sans-serif;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.team-member {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-green);
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    color: var(--primary-blue);
+}
+
+.team-member p {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.team-member .social-icons a {
+    color: #555;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.team-member .social-icons a:hover {
+    color: var(--accent-green);
+}
+
+
+/* Second Hero Section */
+.hero-second-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-hands.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 30px 300px; 
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    min-height: 450px; 
+    width: 100%; /* S'assure que la section prend toute la largeur */
+}
+
+ 
+
+.hero-second-content h2 {
+    font-size: 2.8em; /* Taille du titre */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'Oswald', sans-serif; /* Utilisez la police de votre choix */
+}
+
+.hero-second-content p {
+    font-size: 1.2em; /* Taille du paragraphe */
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif; /* Utilisez la police de votre choix */
+}
+
+.btn-hero-second {
+    display: inline-block;
+    background-color: var(--accent-green); /* Couleur de votre bouton */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero-second:hover {
+    background-color: #00b347; /* Couleur au survol */
+}
+
+/* Réactivité pour les écrans plus petits */
+@media (max-width: 768px) {
+    .hero-second-section {
+        padding: 80px 20px;
+        min-height: 350px;
+        justify-content: center; /* Centre le contenu sur les petits écrans */
+        text-align: center; /* Centre le texte sur les petits écrans */
+    }
+
+    .hero-second-content {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .hero-second-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-second-content p {
+        font-size: 1em;
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100vh; /* occupe toute la hauteur visible de l’écran */
+}
+
+
+
+
+
+
+
+
+
+/* Style pour la nouvelle section "hero" de la page de formation */
+.hero-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/hero-page-bg.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.hero-page h2 {
+    font-size: 3em;
+    color: white;
+}
+
+/* Section de contenu de la page */
+.content-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+}
+
+.content-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.content-block img {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 400px;
+}
+
+.content-block .text-block {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+/* Ajustements pour les mobiles */
+@media (max-width: 768px) {
+    .content-block, .content-block.reverse {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .content-block img, .content-block .text-block {
+        max-width: 100%;
+    }
+}

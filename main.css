@@ -1,0 +1,66 @@
+.logo-circle {
+  width: 50px;          /* taille à ajuster */
+  height: 60px;
+  align-items: center;
+  border-radius: 550%;    /* rend l’image circulaire */
+  object-fit: cover;     /* évite la déformation */
+  background:  whitesmoke;   /* couleur de fond derrière */
+  padding: 5px;         /* espace autour de l’image */
+}
+
+
+
+
+
+
+
+/* Conteneur de chaque valeur */
+.value-tag-wrapper {
+    position: relative; /* Permet de positionner la description par rapport à ce conteneur */
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Style de la description cachée */
+.value-description {
+    position: absolute;
+    bottom: calc(100% + 15px); /* Positionne la description au-dessus de la balise de valeur */
+    left: 50%;
+    transform: translateX(-50%); /* Centre le texte horizontalement */
+    width: 250px;
+    padding: 15px;
+    background-color: var(--primary-blue); /* Couleur de fond de l'info-bulle */
+    color: white;
+    font-size: 0.9em;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Rends la description invisible par défaut */
+    visibility: hidden; /* Cache la description pour éviter qu'elle n'affecte la mise en page */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 5;
+    text-align: center;
+}
+
+/* Flèche pointant vers le bas */
+.value-description::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--primary-blue) transparent transparent transparent; /* Crée la flèche */
+}
+
+/* Règle au survol du conteneur parent pour afficher la description */
+.value-tag-wrapper:hover .value-description {
+    opacity: 1; /* Rends la description visible */
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px); /* Ajoute un léger effet de glissement vers le haut */
+}
+
+/* Ajustement pour le survol du tag de valeur (pour ne pas perturber l'effet de survol) */
+.value-tag-wrapper:hover .value-tag {
+    transform: none; /* Désactive la transformation du tag seul pour un effet plus propre */
+}
