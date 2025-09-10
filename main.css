@@ -1,7 +1,7 @@
  .logo-circle {
-  width: 30px;              /* largeur du cercle */
-  height: 60px;             /* hauteur identique pour un vrai cercle */
-  border-radius: 100%;       /* rend l’image circulaire */
+  width: 50px;              /* largeur du cercle */
+  height: 50px;             /* hauteur identique pour un vrai cercle */
+  border-radius: 50%;       /* rend l’image circulaire */
   object-fit: cover;        /* évite la déformation */
   background: whitesmoke;   /* couleur de fond */
   padding: 3px;             /* espace autour de l’image */
@@ -9,7 +9,6 @@
   align-items: center;      /* centre verticalement */
   justify-content: center;  /* centre horizontalement */
 }
-
 
 
 
@@ -66,4 +65,134 @@
 /* Ajustement pour le survol du tag de valeur (pour ne pas perturber l'effet de survol) */
 .value-tag-wrapper:hover .value-tag {
     transform: none; /* Désactive la transformation du tag seul pour un effet plus propre */
+}
+
+
+
+/* Centrage du formulaire à un seul champ */
+.contact-form-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu horizontalement */
+    justify-content: center; /* Centre le contenu verticalement si nécessaire */
+    text-align: center; /* Centre le texte */
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond optionnelle pour un effet de bloc */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.single-input-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Ajoute un espace entre le titre, le champ et le bouton */
+    max-width: 400px; /* Limite la largeur du formulaire pour un meilleur rendu */
+}
+
+/* Style pour le champ de saisie */
+#email-input {
+    width: 100%; /* S'assure que le champ prend la largeur du conteneur */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    text-align: center; /* Centre le texte de saisie */
+}
+
+/* Style pour le bouton */
+.btn-send {
+    padding: 12px 30px;
+    border-radius: 25px;
+}
+
+
+
+/* Media query pour les écrans jusqu'à 768px de large (mobiles et tablettes) */
+@media (max-width: 768px) {
+
+    /* Règle pour le menu de navigation */
+    .main-nav {
+        padding: 15px 20px; /* Ajoute plus d'espace sur les côtés pour mobile */
+    }
+    
+    .nav-links {
+        display: none; /* Cache le menu de navigation par défaut sur mobile */
+        flex-direction: column; /* Organise les liens verticalement */
+        position: absolute;
+        top: 60px; /* Positionne le menu sous le header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-blue); /* Ajoute une couleur de fond pour le menu */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche le menu lorsque la classe 'active' est ajoutée par JavaScript */
+    }
+    
+    .nav-links li {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-links a {
+        padding: 10px 20px;
+        display: block;
+    }
+    
+    .btn-contact {
+        display: none; /* Cache le bouton de contact dans le menu */
+    }
+
+    .menu-toggle {
+        display: block; /* Affiche le bouton du menu hamburger sur mobile */
+    }
+
+    /* Règle pour la section du hero et le contenu */
+    .hero-page {
+        min-height: 250px;
+    }
+
+    .hero-page h2 {
+        font-size: 2em;
+    }
+
+    .content-section {
+        padding: 40px 20px; /* Réduit le padding pour plus d'espace vertical */
+    }
+
+    /* Règle pour la section du formulaire de contact */
+    .contact-container {
+        flex-direction: column;
+    }
+
+    /* Règle pour les blocs de contenu */
+    .content-block,
+    .content-block.reverse {
+        flex-direction: column; /* Empile les images et les textes verticalement */
+        gap: 20px;
+    }
+
+    .content-block img,
+    .content-block .text-block {
+        max-width: 100%; /* L'image et le texte occupent toute la largeur */
+    }
+
+    .content-block img {
+        height: 300px; /* Réduit la hauteur des images */
+    }
+    
+    /* Règle pour la section des 3 blocs vides */
+    .empty-blocks-container {
+        grid-template-columns: 1fr; /* Affiche les blocs un par un, en colonne */
+    }
+
+    /* Règle pour le pied de page */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Empile les éléments du pied de page verticalement */
+        text-align: center;
+    }
 }
