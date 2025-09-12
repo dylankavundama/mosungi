@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="blog.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@400;700&display=swap"
@@ -50,37 +50,41 @@
                 <p>Découvrez les dernières actualités et nos histoires inspirantes.</p>
             </div>
         </section>
- <section class="blog-list-section">
-    <div class="blog-list-container">
-        <article class="blog-post" data-article-id="1">
-            <img src="images/New folder/mission.jpeg" alt="Article de blog 1">
-            <div class="post-content">
-                <span class="blog-date">10 Septembre 2025</span>
-                <h3 class="blog-title">Comment la Fondation Mosungi aide les enfants victimes de conflit</h3>
-                <p class="blog-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sit quos in aut perspiciatis ab? Exercitationem dolorum, temporibus id sint esse voluptatibus non animi...</p>
-                <button class="read-more-btn">Lire la suite <i class="fas fa-arrow-right"></i></button>
-            </div>
-        </article>
+        <section class="blog-list-section">
+            <div class="blog-list-container">
+                <article class="blog-post" data-article-id="1">
+                    <img src="images/New folder/mission.jpeg" alt="Article de blog 1">
+                    <div class="post-content">
+                        <span class="blog-date">10 Septembre 2025</span>
+                        <h3 class="blog-title">Comment la Fondation Mosungi aide les enfants victimes de conflit</h3>
+                        <p class="blog-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sit
+                            quos in aut perspiciatis ab? Exercitationem dolorum, temporibus id sint esse voluptatibus
+                            non animi...</p>
+                        <button class="read-more-btn">Lire la suite <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </article>
 
-        <article class="blog-post" data-article-id="2">
-            <img src="images/New folder/WhatsApp Image 2025-09-05 at 15.37.28.jpeg" alt="Article de blog 2">
-            <div class="post-content">
-                <span class="blog-date">05 Septembre 2025</span>
-                <h3 class="blog-title">La RDC face aux défis humanitaires</h3>
-                <p class="blog-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sit quos in aut perspiciatis ab? Exercitationem dolorum, temporibus id sint esse voluptatibus non animi...</p>
-                <button class="read-more-btn">Lire la suite <i class="fas fa-arrow-right"></i></button>
+                <article class="blog-post" data-article-id="2">
+                    <img src="images/New folder/WhatsApp Image 2025-09-05 at 15.37.28.jpeg" alt="Article de blog 2">
+                    <div class="post-content">
+                        <span class="blog-date">05 Septembre 2025</span>
+                        <h3 class="blog-title">La RDC face aux défis humanitaires</h3>
+                        <p class="blog-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sit
+                            quos in aut perspiciatis ab? Exercitationem dolorum, temporibus id sint esse voluptatibus
+                            non animi...</p>
+                        <button class="read-more-btn">Lire la suite <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </article>
             </div>
-        </article>
-    </div>
-</section>
+        </section>
 
-<div id="blog-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        <div id="modal-article-content">
+        <div id="blog-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div id="modal-article-content">
+                </div>
             </div>
-    </div>
-</div>
+        </div>
 
         <section class="contact-section">
             <div class="contact-container">
@@ -90,7 +94,7 @@
                     <p>Très loin, au cœur des communautés blessées par les conflits. Là où la dignité est menacée, la
                         Fondation Mosungi s'élève pour protéger, soigner et redonner espoir.</p>
                     <p class="contact-detail"><i class="fas fa-envelope"></i> contact@mosungi.org</p>
-                    <p class="contact-detail"><i class="fas fa-phone"></i> +243998777700</p>
+                    <a href="tel:+243998777700">+243 998 777 700</a>
                 </div>
                 <div class="contact-form-block">
                     <form>
@@ -132,67 +136,67 @@
             <p>&copy; 2025 Fondation Mosungi - Tous droits réservés</p>
         </div>
     </footer>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('blog-modal');
-        const modalContent = document.getElementById('modal-article-content');
-        const closeBtn = document.querySelector('.close-btn');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('blog-modal');
+            const modalContent = document.getElementById('modal-article-content');
+            const closeBtn = document.querySelector('.close-btn');
 
-        // Contenu de vos articles, stocké en JavaScript
-        const articles = {
-            1: {
-                title: "Comment la Fondation Mosungi aide les enfants victimes de conflit",
-                date: "10 Septembre 2025",
-                image: "images/New folder/mission.jpeg",
-                content: `
+            // Contenu de vos articles, stocké en JavaScript
+            const articles = {
+                1: {
+                    title: "Comment la Fondation Mosungi aide les enfants victimes de conflit",
+                    date: "10 Septembre 2025",
+                    image: "images/New folder/mission.jpeg",
+                    content: `
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 `
-            },
-            2: {
-                title: "La RDC face aux défis humanitaires",
-                date: "05 Septembre 2025",
-                image: "images/New folder/WhatsApp Image 2025-09-05 at 15.37.28.jpeg",
-                content: `
+                },
+                2: {
+                    title: "La RDC face aux défis humanitaires",
+                    date: "05 Septembre 2025",
+                    image: "images/New folder/WhatsApp Image 2025-09-05 at 15.37.28.jpeg",
+                    content: `
                     <p>Cet article approfondit les défis auxquels est confrontée la RDC en matière d'aide humanitaire. Découvrez comment notre fondation agit sur le terrain pour apporter une aide vitale aux populations dans le besoin.</p>
                     <p>Nous nous concentrons sur les zones les plus touchées, en fournissant des abris d'urgence, de la nourriture et des soins médicaux de base. Notre action vise à restaurer la dignité des personnes et à leur donner l'espoir d'un avenir meilleur.</p>
                 `
-            }
-            // Ajoutez d'autres articles ici
-        };
+                }
+                // Ajoutez d'autres articles ici
+            };
 
-        // Événement pour ouvrir le popup
-        document.querySelectorAll('.read-more-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const articleId = this.closest('.blog-post').getAttribute('data-article-id');
-                const articleData = articles[articleId];
+            // Événement pour ouvrir le popup
+            document.querySelectorAll('.read-more-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const articleId = this.closest('.blog-post').getAttribute('data-article-id');
+                    const articleData = articles[articleId];
 
-                // Charge le contenu dans le popup
-                if (articleData) {
-                    modalContent.innerHTML = `
+                    // Charge le contenu dans le popup
+                    if (articleData) {
+                        modalContent.innerHTML = `
                         <img src="${articleData.image}" alt="${articleData.title}">
                         <span class="blog-date">${articleData.date}</span>
                         <h3 class="blog-title">${articleData.title}</h3>
                         ${articleData.content}
                     `;
-                    modal.style.display = 'block';
+                        modal.style.display = 'block';
+                    }
+                });
+            });
+
+            // Événement pour fermer le popup
+            closeBtn.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            // Fermer le popup en cliquant en dehors
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
                 }
             });
         });
-
-        // Événement pour fermer le popup
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // Fermer le popup en cliquant en dehors
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    });
-</script>
+    </script>
 </body>
 
 </html>
