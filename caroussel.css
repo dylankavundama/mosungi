@@ -1,0 +1,91 @@
+/* Styles pour le conteneur principal */
+.logo-carousel-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.logo-carousel-section h2 {
+    margin-bottom: 40px;
+    font-size: 2.8rem;
+    color: #333;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Conteneur de la bande de défilement */
+.logo-carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0; /* Ajout d'un padding pour un bon espacement entre les deux lignes */
+}
+
+/* Les deux pistes de défilement */
+.logo-carousel-track-top,
+.logo-carousel-track-bottom {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+/* Styles pour le cercle autour de chaque logo (inchangé) */
+.logo-circle-wrapper {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-circle-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.logo-circle-wrapper img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-circle-wrapper:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Animations de défilement pour les deux pistes */
+.logo-carousel-track-top {
+    animation: scroll-left 15s linear infinite;
+    margin-bottom: 20px; /* Espace entre les deux lignes */
+}
+
+.logo-carousel-track-bottom {
+    animation: scroll-right 15s linear infinite;
+}
+
+.logo-carousel-track-top:hover,
+.logo-carousel-track-bottom:hover {
+    animation-play-state: paused;
+}
+
+/* Définition des animations */
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% / 2 - 30px)); }
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(calc(-100% / 2 - 30px)); }
+    to { transform: translateX(0); }
+}

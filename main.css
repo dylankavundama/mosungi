@@ -145,3 +145,112 @@
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
+
+
+
+/* Styles de la fenêtre de dialogue */
+dialog {
+    border: none;
+    padding: 0;
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dialog-content {
+    padding: 20px;
+    position: relative;
+    background-color: #fff;
+}
+
+#close-dialog-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+#close-dialog-btn:hover {
+    color: #00A0DF;
+}
+
+.dialog-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.dialog-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.dialog-meta {
+    color: #777;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.dialog-full-content p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+.dialog-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.dialog-footer-logo {
+    max-width: 440px; /* Ajustez la taille selon vos besoins */
+    height: auto;
+    display: inline-block;
+}
+
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Espacement entre le texte et l'icône */
+    text-decoration: none;
+    background-color: #00b347; /* Couleur de fond (ajustez selon votre palette) */
+    color: #fff; /* Couleur du texte */
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    background-color: #007bb5; /* Une couleur légèrement plus foncée au survol */
+    transform: translateY(-2px); /* Un léger effet de soulèvement au survol */
+}
+
+/* Style de l'icône à l'intérieur du bouton */
+.read-more-btn .fas {
+    transition: transform 0.3s ease;
+}
+
+/* Faire bouger la flèche légèrement au survol */
+.read-more-btn:hover .fas {
+    transform: translateX(5px);
+}
