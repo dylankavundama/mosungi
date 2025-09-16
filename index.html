@@ -288,57 +288,15 @@
     </section>
     <hr style="border: none; height: 1px; background-color: #00A0DF;">
     <section class="blog-section" id="blog-section">
-        <h2><a href="blog.html" style="text-decoration: none; color: inherit;">
-                NOS DERNIÈRES ACTUALITÉS
-            </a></h2>
-
-        <div class="blog-grid">
-            <article class="blog-post">
-                <img src="images/article/a.jpeg" alt="Description de l'article 2">
-                <div class="post-content">
-                    <h3>LUTTE CONTRE LES VBG
-                    </h3>
-                    <p class="post-date">25 Août 2025</p>
-                    <p>Photo de cloture sensibilisation sur la prévention au harcèlement exploitation et abus sexuel en
-                        milieu scolaire au sein du lycée Shaumaba
-                    </p>
-                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-
-
-
-            <article class="blog-post">
-                <img src="images/article/b.jpeg" alt="Description de l'article 1">
-                <div class="post-content">
-                    <h3>MISSION AIDE HUMANITAIRE DANS LE KWANGO
-                    </h3>
-                    <p class="post-date">10 Septembre 2025</p>
-                    <p>Remise d’une enveloppe au Médecin chef De l’hôpital Barrière pour les soins des personnes
-                        déplacées
-                    </p>
-                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <img src="images/article/c.jpeg" alt="Description de l'article 2">
-                <div class="post-content">
-                    <h3>MISSION AIDE HUMANITAIRE DANS LE KWANGO
-                    </h3>
-                    <p class="post-date">25 Août 2025</p>
-                    <p>Groupe de parole dans le cadre de la réponse à la crise humanitaire dans le kwango à Lonzo
-                    </p>
-                    <a href="#" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-
-
-
-        </div>
-    </section>
+    <h2>
+        <a href="blog.html" style="text-decoration: none; color: inherit;">
+            NOS DERNIÈRES ACTUALITÉS
+        </a>
+    </h2>
+    <div class="blog-grid">
+        <p>Chargement des articles en cours...</p>
+    </div>
+</section>
     <br>
     <hr style="border: none; height: 1px; background-color:green">
     <section class="partners-section">
@@ -457,6 +415,70 @@
             }
         });
     </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Sélectionnez l'élément conteneur pour les articles de blog
+        const blogGrid = document.querySelector('.blog-grid');
+
+        // URL de l'API pour les 3 derniers articles, incluant les images en vedette
+        const apiUrl = 'https://mosungi.org/blog/wp-json/wp/v2/posts?_embed&per_page=3';
+
+        // Fonction pour récupérer et afficher les articles
+        async function fetchLatestPosts() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`Erreur HTTP: ${response.status}`);
+                }
+                const posts = await response.json();
+
+                // Vide le contenu statique existant
+                blogGrid.innerHTML = '';
+
+                if (posts.length > 0) {
+                    posts.forEach(post => {
+                        // Extrait la date de publication et la formate
+                        const date = new Date(post.date);
+                        const formattedDate = date.toLocaleDateString('fr-FR', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        });
+
+                        // Récupère l'URL de l'image en vedette ou utilise une image par défaut
+                        const featuredImage = post._embedded && post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'images/default-blog-image.jpg';
+
+                        // Crée l'élément article
+                        const articleHTML = `
+                            <article class="blog-post">
+                                <img src="${featuredImage}" alt="${post.title.rendered}">
+                                <div class="post-content">
+                                    <h3>${post.title.rendered}</h3>
+                                    <p class="post-date">${formattedDate}</p>
+                                    <p>${post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 100)}...</p>
+                                    <a href="${post.link}" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        `;
+                        
+                        // Ajoute le nouvel article au conteneur
+                        blogGrid.innerHTML += articleHTML;
+                    });
+                } else {
+                    blogGrid.innerHTML = '<p>Aucun article récent n\'a été trouvé.</p>';
+                }
+
+            } catch (error) {
+                console.error('Erreur lors de la récupération des articles:', error);
+                blogGrid.innerHTML = '<p>Désolé, une erreur est survenue lors du chargement des articles.</p>';
+            }
+        }
+
+        // Appelle la fonction pour lancer le processus
+        fetchLatestPosts();
+    });
+</script>
 </body>
 
 </html>
