@@ -201,7 +201,7 @@ html, body {
 
 
 .hero-section {
-    background-image: url('images/New folder/hero.jpg');
+    background-image: url('images/New folder/main.jpg');
     background-size: cover; /* Assure que l'image couvre toute la zone, sans déformation */
     background-position: center center; /* Centre l'image pour un meilleur rendu */
     background-repeat: no-repeat;
@@ -1062,7 +1062,7 @@ h1, h2, h3 {
 
 /* Second Hero Section */
 .hero-second-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/New folder/hero.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/New folder/main.jpg') no-repeat center center/cover;
     background-size: cover;
     background-position: center;
     color: white;
@@ -1140,6 +1140,101 @@ h1, h2, h3 {
 
 
 
+/* Section Message du Président */
+.president-message-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
 
+.president-container {
+    display: flex;
+    gap: 50px;
+    align-items: center; /* Alignement vertical */
+}
+
+/* Bloc Photo (à gauche) */
+.photo-block {
+    flex: 0 0 300px; /* Largeur fixe pour la photo */
+    text-align: center;
+    position: relative;
+}
+
+.president-photo {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.president-info {
+    margin-top: 15px;
+}
+
+.president-info h3 {
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.president-info p {
+    font-style: italic;
+    color: var(--dark-grey-text);
+    font-size: 0.95em;
+}
+
+
+/* Bloc Texte (à droite) */
+.text-block {
+    flex: 1;
+}
+
+.text-block h2 {
+    color: var(--primary-blue);
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+/* Style de la Citation */
+.president-quote {
+    border-left: 5px solid var(--accent-green); /* Barre d'accentuation verte */
+    padding-left: 25px;
+    margin: 0;
+    font-style: italic;
+}
+
+.president-quote .quote-text {
+    font-size: 1.15em;
+    color: var(--dark-grey-text);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Réactivité */
+@media (max-width: 900px) {
+    .president-container {
+        flex-direction: column; /* Empile les blocs verticalement */
+        gap: 30px;
+    }
+    .photo-block {
+        flex: 1;
+        max-width: 300px; /* Limite la largeur même en colonne */
+        order: 0; /* Garde la photo en haut */
+    }
+    .text-block {
+        text-align: center; /* Centre le texte sur mobile */
+        order: 1;
+    }
+    .text-block h2 {
+        text-align: center;
+    }
+    /* Adapte la citation pour le centrage si nécessaire */
+    .president-quote {
+        border-left: none;
+        padding-left: 0;
+        border-top: 3px solid var(--accent-green);
+        padding-top: 15px;
+    }
+}
 
 

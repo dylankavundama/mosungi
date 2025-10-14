@@ -1,0 +1,191 @@
+/* Section Soutien Humanitaire */
+.humanitarian-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+    /* Utilise la couleur de fond claire déjà définie */
+    background-color: var(--light-grey); 
+}
+
+.humanitarian-container {
+    display: flex;
+    gap: 50px;
+    align-items: center; 
+}
+
+.humanitarian-container .text-block {
+    flex: 1;
+    max-width: 50%;
+}
+
+.humanitarian-container .image-block {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligne l'image à droite */
+}
+
+.humanitarian-image {
+    width: 100%;
+    max-width: 500px;
+    height: 400px; /* Hauteur fixe pour un look professionnel */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Style du bouton "Découvrir notre action humanitaire" */
+.btn-humanitarian {
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    font-weight: 700;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-humanitarian:hover {
+    background: var(--dark-blue);
+}
+
+/* Réactivité */
+@media (max-width: 1024px) {
+    .humanitarian-container {
+        flex-direction: column; /* Empile l'image et le texte */
+        gap: 30px;
+        align-items: center;
+    }
+    .humanitarian-container .text-block {
+        max-width: 100%;
+        text-align: center;
+        order: 1; /* Texte après l'image */
+    }
+    .humanitarian-container .image-block {
+        order: 0; /* Image en premier */
+        justify-content: center;
+    }
+    .humanitarian-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .humanitarian-section {
+        padding: 40px 20px;
+    }
+}
+
+
+/* Section Bien-être au Travail & Population */
+.wellbeing-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+    background-color: white; /* Fond blanc par défaut */
+}
+
+.wellbeing-container {
+    display: flex;
+    gap: 50px;
+    align-items: center; /* Aligne le texte et l'image verticalement */
+}
+
+.wellbeing-container .text-block {
+    flex: 1;
+    max-width: 50%;
+}
+
+.wellbeing-container .image-block {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligne l'image à droite */
+}
+
+.wellbeing-image {
+    width: 100%;
+    max-width: 500px;
+    height: 400px; 
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur des boutons pour l'alignement */
+.wellbeing-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne sur mobile */
+    gap: 15px;
+}
+
+/* Style du bouton principal (Solutions) */
+.btn-wellbeing-main {
+    background: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.btn-wellbeing-main:hover {
+    background: var(--dark-blue);
+}
+
+/* Style du bouton secondaire (Formations) */
+.btn-wellbeing-secondary {
+    background: transparent;
+    color: var(--primary-blue);
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 2px solid var(--primary-blue);
+    font-size: 1em;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-wellbeing-secondary:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+
+/* Réactivité */
+@media (max-width: 1024px) {
+    .wellbeing-container {
+        flex-direction: column; /* Empile l'image et le texte */
+        gap: 30px;
+        align-items: center;
+    }
+    .wellbeing-container .text-block {
+        max-width: 100%;
+        text-align: center;
+        order: 1; /* Texte après l'image */
+    }
+    .wellbeing-container .image-block {
+        order: 0; /* Image en premier */
+        justify-content: center;
+    }
+    .wellbeing-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .wellbeing-buttons {
+        justify-content: center; /* Centre les boutons sur mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .wellbeing-section {
+        padding: 40px 20px;
+    }
+    /* Les boutons s'étendent sur toute la largeur sur petit écran */
+    .btn-wellbeing-main, .btn-wellbeing-secondary {
+        flex-grow: 1;
+        text-align: center;
+    }
+}

@@ -1,0 +1,148 @@
+/* ============================================== */
+/* STYLES SPÉCIFIQUES À LA PAGE ESPACE KIMIA */
+/* ============================================== */
+
+/* Bannière Hero Kimia */
+.kimia-hero-section {
+    /* Image d'arrière-plan symbolisant la paix/calme (à remplacer) */
+    background:  url('./images/governance-community.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 40px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    min-height: 400px; 
+    text-align: center;
+}
+
+/* Améliorations de lisibilité pour la bannière Hero Kimia */
+.kimia-hero-content {
+    /* Ajout d'un léger fond semi-transparent pour le contraste */
+    background-color: rgba(0, 0, 0, 0.2); 
+    padding: 30px 40px;
+    border-radius: 15px;
+    
+    /* Le 'blur' (flou) sur l'arrière-plan du contenu */
+    backdrop-filter: blur(5px); /* Ajustez la valeur (par exemple, 5px) pour l'effet désiré */
+    -webkit-backdrop-filter: blur(5px); /* Compatibilité navigateurs WebKit (Safari) */
+}
+
+/* Réajustement des styles existants si nécessaire */
+.kimia-hero-content p {
+    /* Assurez-vous que le texte est lisible en augmentant sa taille si besoin */
+    font-size: 1.2em; 
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Section Présentation et Mission (Réutilisation de .about-content) */
+.kimia-about {
+    padding: 80px 40px;
+}
+.kimia-about .kimia-content {
+    /* Assurez-vous que le style de flexbox est actif, hérité des sections principales */
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* Galerie Photos de l'Espace */
+.kimia-gallery {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    background-color: var(--light-grey);
+}
+
+.kimia-gallery h2 {
+    margin-bottom: 40px;
+    color: var(--primary-blue);
+    font-family: 'Oswald', sans-serif;
+}
+
+.gallery-grid {
+    display: grid;
+    /* Mise en page en 3 colonnes de base */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 300px; /* Hauteur fixe pour un effet de galerie propre */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.02);
+}
+
+/* Permet à certaines images de prendre plus de largeur */
+.gallery-img.large-span {
+    grid-column: span 2;
+}
+
+/* Services Spécifiques à Kimia */
+.kimia-services {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.kimia-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-box-kimia {
+    background: white;
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 180px;
+}
+
+.service-box-kimia i {
+    font-size: 2.5em;
+    color: var(--accent-green);
+    margin-bottom: 15px;
+}
+
+.service-box-kimia h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+
+/* Réactivité de la Galerie */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    }
+    .gallery-img.large-span {
+        grid-column: span 1; /* Supprime l'étendue des images larges sur tablette */
+    }
+}
+
+@media (max-width: 600px) {
+    .kimia-hero-section {
+        padding: 60px 20px;
+    }
+    .kimia-hero-content h1 {
+        font-size: 2em;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 colonne sur mobile */
+    }
+    .kimia-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
