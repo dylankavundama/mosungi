@@ -189,3 +189,31 @@
         text-align: center;
     }
 }
+
+/* Style pour le titre de la section principale des Axes */
+.axes-title-section {
+    padding: 60px 40px 0;
+    text-align: center; /* Assure le centrage du texte */
+    background-color: white;
+    max-width: 100%;
+    margin: auto;
+}
+
+.section-main-title {
+    font-size: 3em;
+    color: var(--primary-blue);
+    margin-bottom: 0;
+    position: relative;
+    display: inline-block; 
+}
+
+/* Soulignement centré */
+.section-main-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-green);
+    margin: 10px auto 0; /* Centre la ligne de séparation */
+    border-radius: 2px;
+}
