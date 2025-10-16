@@ -17,6 +17,30 @@
     text-align: center;
 }
 
+/* Header */
+ header {
+    background: var(--primary-blue);
+    color: white;
+
+    /* Rend l'élément fixe par rapport à la fenêtre du navigateur */
+    position: fixed;
+
+    /* Positionne l'élément en haut de la fenêtre */
+    top: 0;
+
+    /* Assure que l'élément s'étend sur toute la largeur de la fenêtre */
+    width: 100%;
+
+    /* Assure que l'en-tête reste au-dessus des autres éléments */
+    z-index: 1000; 
+
+    /* Optionnel: pour s'assurer que l'alignement est correct à gauche */
+    left: 0; 
+
+    /* Optionnel: Vous pourriez avoir besoin d'un fond pour cacher le contenu qui défile en dessous */
+    /* background-color: white; */ 
+    /* Remplacez 'white' par la couleur de fond actuelle de votre header si elle est différente */
+}
 /* Améliorations de lisibilité pour la bannière Hero Kimia */
 .kimia-hero-content {
     /* Ajout d'un léger fond semi-transparent pour le contraste */
