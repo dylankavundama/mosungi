@@ -112,7 +112,7 @@ ul {
 
     /* Assure que l'élément s'étend sur toute la largeur de la fenêtre */
     width: 100%;
-
+    /* height: 50%; */
     /* Assure que l'en-tête reste au-dessus des autres éléments */
     z-index: 1000; 
 
@@ -1088,6 +1088,7 @@ h1, h2, h3 {
     padding: 30px 300px; 
     display: flex;
     align-items: center; 
+    height: 100vh;
     justify-content: flex-start;
     min-height: 450px; 
     width: 100%; /* S'assure que la section prend toute la largeur */
