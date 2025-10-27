@@ -364,13 +364,13 @@ section {
 .services-section h2 {
     color: white;
      font-family: 'Oswald', sans-serif;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 20px;
     justify-content: center;
 }
 
@@ -382,7 +382,7 @@ section {
     text-align: left;
     position: relative;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    min-height: 180px; /* Ensure consistent height */
+    min-height: 60px; /* Ensure consistent height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

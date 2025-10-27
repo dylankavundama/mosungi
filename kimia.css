@@ -2,19 +2,34 @@
 /* STYLES SPÉCIFIQUES À LA PAGE ESPACE KIMIA */
 /* ============================================== */
 
-/* Bannière Hero Kimia */
+ /* Bannière Hero Kimia */
 .kimia-hero-section {
     /* Image d'arrière-plan symbolisant la paix/calme (à remplacer) */
-    background:  url('./images/governance-community.jpg') no-repeat center center/cover;
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 100px 40px; 
+    /* J'ai consolidé background-size et background-position dans la shorthand */
+    background: url('./images/kimia/c.png') no-repeat center center/cover;
+    
+    color: white; /* Couleur du texte */
+    
+    /* Propriétés pour un affichage fullscreen */
+    height: 50vh; /* Prend 100% de la hauteur du viewport */
+    width: 150%;   /* Prend 100% de la largeur du viewport */
+    min-height: 300px; /* Votre hauteur minimale est maintenue */
+
+    /* Flexbox pour le centrage du contenu */
     display: flex;
-    align-items: center; 
-    justify-content: center;
-    min-height: 400px; 
-    text-align: center;
+    align-items: center;    /* Centre le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    
+    /* Espacement interne du contenu */
+    /* Ajusté le padding pour un meilleur aspect fullscreen et responsive.
+       Un padding horizontal en pourcentage est plus flexible. */
+    padding: 100px 5%; /* Ou une valeur fixe comme 40px si vous préférez */
+
+    text-align: center; /* Texte centré */
+    
+    /* Assurez-vous que le body/html n'a pas de marges par défaut */
+    /* Ce n'est pas dans cette classe, mais c'est crucial pour le 100vh/100% */
+    /* Ex: html, body { margin: 0; padding: 0; box-sizing: border-box; } */
 }
 
 /* Header */
