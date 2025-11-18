@@ -664,20 +664,46 @@
 
 
     <script>
-        document.getElementById('send-btn').addEventListener('click', function () {
-            const emailInput = document.getElementById('email-input').value;
-            if (emailInput) {
+        document.addEventListener('DOMContentLoaded', function () {
+            const sendBtn = document.getElementById('send-btn');
+            const emailInput = document.getElementById('email-input');
+            
+            if (!sendBtn || !emailInput) {
+                console.error('Éléments du formulaire de contact manquants');
+                return;
+            }
+
+            // Fonction de validation d'email
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            sendBtn.addEventListener('click', function () {
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    alert("Veuillez entrer une adresse email.");
+                    emailInput.focus();
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    alert("Veuillez entrer une adresse email valide.");
+                    emailInput.focus();
+                    return;
+                }
+                
                 // Encode l'adresse e-mail et l'objet pour un lien "mailto"
                 const subject = encodeURIComponent("Prise de contact via le site web");
+                const encodedEmail = encodeURIComponent(email);
 
                 // Construit l'URL mailto:
-                const mailtoUrl = `mailto:contact@mosungi.org?subject=${subject}&to=${emailInput}`;
+                const mailtoUrl = `mailto:contact@mosungi.org?subject=${subject}&body=Email de contact: ${encodedEmail}`;
 
                 // Redirige l'utilisateur
                 window.location.href = mailtoUrl;
-            } else {
-                alert("Veuillez entrer une adresse email valide.");
-            }
+            });
         });
     </script>
     <script>
@@ -688,9 +714,22 @@
             const dialogContent = document.getElementById('dialog-article-details');
             const closeBtn = document.getElementById('close-dialog-btn');
 
+            // Vérification que les éléments existent
+            if (!blogGrid || !dialog || !dialogContent || !closeBtn) {
+                console.error('Éléments DOM manquants pour le blog');
+                return;
+            }
+
             // URLs de l'API
             const apiUrl = 'https://mosungi.org/blog/wp-json/wp/v2/posts';
             const latestPostsUrl = `${apiUrl}?_embed&per_page=3`;
+
+            // Fonction pour échapper le HTML et prévenir les XSS
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
 
             // Fonction pour créer un aperçu d'article
             function createPostPreview(post) {
@@ -707,13 +746,19 @@
 
                 const featuredImage = post._embedded && post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'images/default-blog-image.jpg';
                 const authorName = post._embedded && post._embedded.author && post._embedded.author[0] ? post._embedded.author[0].name : 'Inconnu';
+                
+                // Échapper les valeurs pour prévenir XSS
+                const safeTitle = escapeHtml(post.title.rendered);
+                const safeAuthorName = escapeHtml(authorName);
+                const safeExcerpt = post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 100);
+                const safeImageUrl = escapeHtml(featuredImage);
 
                 article.innerHTML = `
-            <img src="${featuredImage}" alt="${post.title.rendered}">
+            <img src="${safeImageUrl}" alt="${safeTitle}" loading="lazy">
             <div class="post-content">
-                <h3>${post.title.rendered}</h3>
-                <p class="post-date">Publié par ${authorName} le ${formattedDate}</p>
-                <p>${post.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 100)}...</p>
+                <h3>${safeTitle}</h3>
+                <p class="post-date">Publié par ${safeAuthorName} le ${formattedDate}</p>
+                <p>${safeExcerpt}...</p>
          <a href="#" class="read-more-btn" role="button" aria-label="Lire la suite de l'article">
     <span>Lire la suite</span> 
     <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -767,21 +812,30 @@
                     const featuredImage = post._embedded && post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0].source_url : 'images/default-blog-image.jpg';
                     const authorName = post._embedded && post._embedded.author && post._embedded.author[0] ? post._embedded.author[0].name : 'Inconnu';
 
+                    // Échapper les valeurs pour prévenir XSS (sauf content.rendered qui peut contenir du HTML valide de WordPress)
+                    const safeTitle = escapeHtml(post.title.rendered);
+                    const safeAuthorName = escapeHtml(authorName);
+                    const safeImageUrl = escapeHtml(featuredImage);
+                    
+                    // Note: post.content.rendered contient du HTML de WordPress, donc on le garde tel quel
+                    // mais on s'assure que l'API WordPress est fiable
+
                     // Met à jour le contenu du dialogue avec les détails de l'article et le logo
                     dialogContent.innerHTML = `
-                <img src="${featuredImage}" alt="${post.title.rendered}" class="dialog-image">
-                <p class="dialog-meta">Publié par ${authorName} le ${formattedDate}</p>
-                <h3 class="dialog-title">${post.title.rendered}</h3>
+                <img src="${safeImageUrl}" alt="${safeTitle}" class="dialog-image" loading="lazy">
+                <p class="dialog-meta">Publié par ${safeAuthorName} le ${formattedDate}</p>
+                <h3 class="dialog-title">${safeTitle}</h3>
                 <div class="dialog-full-content">
                     ${post.content.rendered}
                 </div>
                 <div class="dialog-footer">
-                    <img src="./logo.png" alt="Fondation Mosungi Logo" class="dialog-footer-logo">
+                    <img src="./logo.png" alt="Fondation Mosungi Logo" class="dialog-footer-logo" loading="lazy">
                 </div>
             `;
                 } catch (error) {
                     console.error('Erreur lors de la récupération de l\'article:', error);
-                    dialogContent.innerHTML = `<p class="error-message">Désolé, impossible de charger l'article. Erreur: ${error.message}</p>`;
+                    const errorMessage = escapeHtml(error.message);
+                    dialogContent.innerHTML = `<p class="error-message">Désolé, impossible de charger l'article. Erreur: ${errorMessage}</p>`;
                 }
             }
 

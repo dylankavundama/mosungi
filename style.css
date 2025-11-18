@@ -1081,7 +1081,7 @@ h1, h2, h3 {
 
 /* Second Hero Section */
 .hero-second-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/New folder/main.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/acceuil.jpg') no-repeat center center/cover;
     background-size: cover;
     background-position: center;
     color: white;
